@@ -10,6 +10,7 @@ Encapsulating object properties via public getter and setter methods is such a c
 | @RequiredArgsConstructor | will generate a constructor for only required fields which have @NotNull annotation |
 
 ### Further Reading
+[Bealdung - Spring Project Lombok](https://www.baeldung.com/intro-to-project-lombok)
 [Lombok @AllArgsConstructor, @NoArgsConstructor and @RequiredArgsConstructor](http://www.javabyexamples.com/delombok-allargsconstructor-noargsconstructor-and-requiredargsconstructor)
 
 ## Getters/Setters, Constructors
