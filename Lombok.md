@@ -9,6 +9,9 @@ Encapsulating object properties via public getter and setter methods is such a c
 | @AllArgsConstructor | will generate a constructor with all parameters in the sequence, they are present in class |
 | @RequiredArgsConstructor | will generate a constructor for only required fields which have @NotNull annotation |
 
+### Further Reading
+[Lombok @AllArgsConstructor, @NoArgsConstructor and @RequiredArgsConstructor]http://www.javabyexamples.com/delombok-allargsconstructor-noargsconstructor-and-requiredargsconstructor
+
 ## Getters/Setters, Constructors
 
 ### Native Java
