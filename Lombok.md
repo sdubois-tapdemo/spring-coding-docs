@@ -74,21 +74,25 @@ public class Contacts {
 By adding the @Getter and @Setter annotations, we told Lombok to generate these for all the fields of the class. @NoArgsConstructor will lead to an empty constructor generation.
 
 ```
-@Entity
-@Getter @Setter @NoArgsConstructor // <--- THIS is it
-public class User implements Serializable {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
 
-    private @Id Long id; // will be set when persisting
-
+@Component
+@Getter @Setter @NoArgsConstructor
+public class Contacts {
     private String firstName;
     private String lastName;
-    private int age;
+    private String email;
+    private String phone;
 
-    public User(String firstName, String lastName, int age) {
+    // Constructor
+    public Contacts(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
+        this.email = email;
+        this.phone = phone;
     }
 }
-
 ```
