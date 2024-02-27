@@ -1,4 +1,13 @@
 # Spring Project Lombok
+Encapsulating object properties via public getter and setter methods is such a common practice in the Java world, and lots of frameworks rely on this “Java Bean” pattern extensively (a class with an empty constructor and get/set methods for “properties”).
+
+## Annotations
+
+| Annotation | Description |
+| --- | --- |
+| @NoArgsConstructor | will generate a default constructor without any parameter |
+| @AllArgsConstructor | will generate a constructor with all parameters in the sequence, they are present in class |
+| @RequiredArgsConstructor | will generate a constructor for only required fields which have @NotNull annotation |
 
 ## Getters/Setters, Constructors
 
