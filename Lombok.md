@@ -96,3 +96,8 @@ public class Contacts {
     }
 }
 ```
+### Lazy-loading
+A common pattern is to retrieve this data only when it’s first needed. In other words, we only get the data when we call the corresponding getter the first time. We call this lazy-loading.
+
+
+
