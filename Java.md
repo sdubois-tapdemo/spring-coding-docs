@@ -1,7 +1,7 @@
 # Java Bean
 A Java Bean is a reusable software component in Java. It is a class that encapsulates many objects into a single object (the bean), and can be instantiated the same way as a normal Java class, public class MyBean { //getters, setters, and methods for the class}. It’s a way to create reusable components for your Java applications.
 
-## definition - a Java bean is exactly that, a serializable POJO (plain old Java object), with a no-argument constructor and private fields with getters/setters.
+| definition - a Java bean is a serializable POJO (plain old Java object), with a no-argument constructor and private fields with getters/setters |
 
 ## Java Bean Spezification
 Individual Java Beans will vary in the functionality they support, but the typical unifying features that distinguish a Java Bean are:
