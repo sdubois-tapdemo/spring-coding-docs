@@ -73,3 +73,4 @@ StudentEJB is a stateless session EJB. It provides a method getStudentDetails() 
 
 When deciding which concept to use, consider the complexity of your application, the features you need, and the resources you have. Java Beans are great for simple, small-scale applications, while POJOs offer more flexibility and EJBs are suitable for large-scale, enterprise applications.
 
+
