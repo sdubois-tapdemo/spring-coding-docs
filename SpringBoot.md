@@ -105,5 +105,6 @@ When deciding which concept to use, consider the complexity of your application,
 
 | Spring Started | Description |
 | Spring Web | Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container. | 
+| --- | --- |
 
 
