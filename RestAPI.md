@@ -13,6 +13,13 @@ xxx
 | @DeleteMapping | xxx | Annotation for mapping HTTP DELETE requests onto specific handler methods |
 | @PatchMapping | xxx | Annotation for mapping HTTP PATCH requests onto specific handler methods |
 
+## Ressource Properties
+Various properties can be specified inside your application.properties file, inside your application.yaml file, or as command line switches. 
+[Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+```
+server.port=8585	## Server Port for HTTP server
+```
+
 ## Simple RestController
 
 ```
