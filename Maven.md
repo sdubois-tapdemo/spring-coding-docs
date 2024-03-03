@@ -25,11 +25,22 @@ The best place to find Spring dependancies is on https://start.spring.io/, selec
 ## Maven Plugins
 A list of Maven Plugins can be found under https://maven.apache.org/plugins.
 
-| Plugin | Descriptio |
+| Plugin | Description |
 | --- | --- |
 | spring-boot-maven-plugin | Provides: mvn spring-boot:run |
 
-## Directory Structore
+## Spring Boot Dev Tools
+Automatically restarts your application when code is updated. More details [Spring Boot Dev Tools](https://www.baeldung.com/spring-boot-devtools). Add the following lines to the pom.xml 
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+```
+To enable it in IntelliJ CE, navigate to Preferences > Build, Execution, Deployment > Compiler and enable "Build project automatically"
+
+
+## Maven Project Directory Structure
 ```
 project
   |__ pom.xml
