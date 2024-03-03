@@ -17,6 +17,9 @@ project
   |    |__ main
   |    |    |__ java 
   |    |    |__ resources 
+  |    |           |__ application.properties      // Application Properties
+  |    |           |__ static                      // HTML Files, CSS, JavaScript, imges, etc.
+  |    |           |__ templates                   // Auto Configuration Templates (Mustache, FreeMarker, Thymeleaf)
   |    |    
   |    |__ test
   |         |__ java 

@@ -25,7 +25,7 @@ project
 
 ```
 
-## Java read Application Properties
+## Read Application Properties in Java
 ```
 public class myClass {
     public String HelloWorld() {
@@ -51,7 +51,7 @@ public class myClass {
 }
 ```
 
-## Spring read Application Properties
+## Read Application Properties in Spring
 ```
 public class myClass {
     @Value("${socker.team}")        // read socker.team variable from application.properties
