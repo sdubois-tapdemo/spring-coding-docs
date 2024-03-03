@@ -97,14 +97,27 @@ StudentEJB is a stateless session EJB. It provides a method getStudentDetails() 
 When deciding which concept to use, consider the complexity of your application, the features you need, and the resources you have. Java Beans are great for simple, small-scale applications, while POJOs offer more flexibility and EJBs are suitable for large-scale, enterprise applications.
 
 ## Spring Boot Starters
+A full list of the Spring Boot Starters can be found here [Spring Boot Starters](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.build-systems.starters).
 - A curated list of Maven dependencies
 - A collection of dependencies grouped together
 - Tested and verified by the Spring Development team
 - Makes it much easier for the developer to get started with Spring
 - Reduces the amount of Maven configuration
 
-| Spring Started | Description |
+| Spring Starter | Description |
 | --- | --- |
+| Spring Boot Starter | Core starter, including auto-configuration support, logging and YAML |
 | Spring Web | Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container. | 
-
+| Spring Boot Starter Test | Starter for testing Spring Boot applications with libraries including JUnit Jupiter, Hamcrest and Mockito |
+|  Spring Boot Starter Actuator | Starter for using Spring Boot's Actuator which provides production ready features to help you monitor and manage your application |
+| Spring Boot Starter AOP | Starter for aspect-oriented programming with Spring AOP and AspectJ |
+| Spring Boot Starter Data JPA | Starter for using Spring Data JPA with Hibernate |
+| Spring Boot Starter Security | org.springframework.boot » spring-boot-starter-security | 
+| Spring Boot Starter Validation | Starter for using Java Bean Validation with Hibernate Validator |
+| Spring Boot Starter Data Redis | Starter for using Redis key-value data store with Spring Data Redis and the Lettuce client |
+| Spring Boot Starter JDBC | Starter for using JDBC with the HikariCP connection pool | 
+| Spring Boot Starter Log4j2 | Starter for using Log4j2 for logging. An alternative to spring-boot-starter-logging |
+| Spring Boot Starter WebFlux | Starter for building WebFlux applications using Spring Framework's Reactive Web support |
+| Spring Boot Starter Logging | org.springframework.boot » spring-boot-actuator |
+| Spring Boot Starter Mail | Starter for using Java Mail and Spring Framework's email sending support |
 
