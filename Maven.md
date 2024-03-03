@@ -37,7 +37,9 @@ Automatically restarts your application when code is updated. More details [Spri
     <artifactId>spring-boot-devtools</artifactId>
 </dependency>
 ```
-To enable it in IntelliJ CE, navigate to Preferences > Build, Execution, Deployment > Compiler and enable "Build project automatically"
+To enable it in IntelliJ CE, navigate to: 
+- IntelliJ -> Settings -> Build, Execution, Deployment -> Compiler and enable "Build project automatically"
+- IntelliJ -> Settings -> Advanced Settings -> Allow auto-make to (enable)
 
 
 ## Maven Project Directory Structure
