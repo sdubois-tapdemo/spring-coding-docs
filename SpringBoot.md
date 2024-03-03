@@ -96,4 +96,11 @@ StudentEJB is a stateless session EJB. It provides a method getStudentDetails() 
 
 When deciding which concept to use, consider the complexity of your application, the features you need, and the resources you have. Java Beans are great for simple, small-scale applications, while POJOs offer more flexibility and EJBs are suitable for large-scale, enterprise applications.
 
+## Java Bean Spezification
+- A curated list of Maven dependencies
+- A collection of dependencies grouped together
+- Tested and verified by the Spring Development team
+- Makes it much easier for the developer to get started with Spring
+- Reduces the amount of Maven configuration
+
 
