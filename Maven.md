@@ -24,7 +24,10 @@ The best place to find Spring dependancies is on https://start.spring.io/, selec
 
 ## Maven Plugins
 A list of Maven Plugins can be found under https://maven.apache.org/plugins.
-- spring-boot-maven-plugin		// mvn spring-boot:run
+
+| Plugin | Descriptio |
+| --- | --- |
+| spring-boot-maven-plugin | Provides: mvn spring-boot:run |
 
 ## Directory Structore
 ```
