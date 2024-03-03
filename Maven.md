@@ -6,8 +6,25 @@ Navigate to search.maven.org and search ie. for hibernate, choose a version and 
 ## Spring dependancies on (start.spring.io) 
 The best place to find Spring dependancies is on https://start.spring.io/, select your Java and Spring Version and click on 'dependancyes^ and add one or more of your spring projects. Then hit <Explore> instead of <Generate>. This will show you the required Maven dependancoies for your Spring projects.
 
+## Spring Boot Starter Parent
+- Default Maven configuration: Java version, UTF-encoding etc
+- Dependency management
+- Use version on parent only
+- spring-boot-starter-* dependencies inherit version from parent
+- Default configuration of Spring Boot plugin
+
+```
+        <parent>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>3.2.3</version>
+                <relativePath/> <!-- lookup parent from repository -->
+        </parent>
+```
+
 ## Maven Plugins
 A list of Maven Plugins can be found under https://maven.apache.org/plugins.
+- spring-boot-maven-plugin		// mvn spring-boot:run
 
 ## Directory Structore
 ```

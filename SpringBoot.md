@@ -121,3 +121,4 @@ A full list of the Spring Boot Starters can be found here [Spring Boot Starters]
 | Spring Boot Starter Logging | org.springframework.boot » spring-boot-actuator |
 | Spring Boot Starter Mail | Starter for using Java Mail and Spring Framework's email sending support |
 
+See Spring Starters dependancies in IntelliJ under View > Tool Windows > Maven Projects > Dependencies.
