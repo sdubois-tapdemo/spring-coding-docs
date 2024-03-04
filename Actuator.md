@@ -49,7 +49,7 @@ info.app.version=1.0.0
 ```
 
 ## Secure Actuator Endpoint
-Please see instructions in the [Security.md](file://Security.md) or [a relative link](Security.md)  file or in the web [Spring Security Documentaiton](https://spring.io/projects/spring-security)
+Please see instructions in the [Security.md](Security.md)  file or in the web [Spring Security Documentaiton](https://spring.io/projects/spring-security)
 
 ## Spring Actuator Endpoint
 ### Health Endpoint
