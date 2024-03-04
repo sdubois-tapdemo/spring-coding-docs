@@ -1,5 +1,8 @@
-# Spring Boot Actuator
-Spring Boot Actuator is a module that provides production-ready features to monitor and manage your Spring Boot application. It offers various endpoints and metrics that can be used for monitoring, health checks, auditing, and managing your application. A full list of the Spring Actuators can be found here [Spring Actuators](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints)
+# Spring Security
+Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.
+Spring Security is a framework that focuses on providing both authentication and authorization to Java applications. Like all Spring projects, the real power of Spring Security is found in how easily it can be extended to meet custom requirements
+
+[Spring Security Documentaiton](https://spring.io/projects/spring-security)
 
 ## Spring Boot Actuators Features
 - Exposes endpoints to monitor and manage your application
