@@ -1,14 +1,11 @@
 # Spring Boot Actuator
-Spring Boot Actuator is a module that provides production-ready features to monitor and manage your Spring Boot application. It offers various endpoints and metrics that can be used for monitoring, health checks, auditing, and managing your application.
+Spring Boot Actuator is a module that provides production-ready features to monitor and manage your Spring Boot application. It offers various endpoints and metrics that can be used for monitoring, health checks, auditing, and managing your application. A full list of the Spring Actuators can be found here [Spring Actuators](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints)
 
-## Spring Boot Starter Parent
+## Spring Boot Actuators Features
 - Exposes endpoints to monitor and manage your application
 - You easily get DevOps functionality out-of-the-box
 - Simply add the dependency to your POM file
 - REST endpoints are automatically added to your application
-
-## Spring Boot Starters
-A full list of the Spring Actuators can be found here [Spring Actuators](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints)
 
 ## Actuator Types
 Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here is a list of standard actuators
