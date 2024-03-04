@@ -38,6 +38,9 @@ Various properties can be specified inside your application.properties file, ins
 management.endpoints.web.exposure.include=health,info.beans,mappings
 management.endpoints.web.exposure.include=*
 
+# Exclude individual endpoints with a comma-delimited list
+management.endpoints.web.exposure.exclude=health
+
 # Configure the Info Endpoints
 management.info.env.enabled=true
 info.app.name=My Super Cool App
@@ -45,6 +48,10 @@ info.app.description=A crazy and fun app, yoohoo!
 info.app.version=1.0.0
 ```
 
+## Secure Actuator Endpoint
+Please see instructions in the Security.md file or in the web [Spring Security Documentaiton](https://spring.io/projects/spring-security)
+
+## Spring Actuator Endpoint
 ### Health Endpoint
 ```
 {

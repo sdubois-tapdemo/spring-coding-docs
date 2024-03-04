@@ -4,48 +4,18 @@ Spring Security is a framework that focuses on providing both authentication and
 
 [Spring Security Documentaiton](https://spring.io/projects/spring-security)
 
-## Spring Boot Actuators Features
-- Exposes endpoints to monitor and manage your application
-- You easily get DevOps functionality out-of-the-box
-- Simply add the dependency to your POM file
-- REST endpoints are automatically added to your application
+## Spring Security Features
+- Comprehensive and extensible support for both Authentication and Authorization
+- Protection against attacks like session fixation, clickjacking, cross site request forgery, etc
+- Servlet API integration
+- Optional integration with Spring Web MVC
 
-## Actuator Types
-Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here is a list of standard actuators
-
-| Endpoingt | Default | Description |
-| --- | --- | --- |
-| /health | {"status":"UP"} | Health information about your application |
-| /info | {} | The /info endpoint can provide information about your application |
-| /auditevents | {} | Audit events for your application |
-| /beans | {} | List of all beans registered in the Spring application context |
-| /mappings | {} | List of all @RequestMapping paths |
-| /threaddump | {} | List of threads running in your application |
-
-## Spring Boot Actuator dependancy in pom.xml
+## Spring Security dependancy in pom.xml
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
-```
-
-## Install the JSON Formatter in chrome
-Navigate to the page https://www.luv2code.com/chrome-json-formatter and install the plugin
-
-## Ressource Properties
-Various properties can be specified inside your application.properties file, inside your application.yaml file, or as command line switches.
-[Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
-```
-# Use wildcard '*' to expose all endpoints or expose individuell endpoints with a comma delimited list
-management.endpoints.web.exposure.include=health,info.beans,mappings
-management.endpoints.web.exposure.include=*
-
-# Configure the Info Endpoints
-management.info.env.enabled=true
-info.app.name=My Super Cool App
-info.app.description=A crazy and fun app, yoohoo!
-info.app.version=1.0.0
 ```
 
 ### Secured Endpoints with generated Passwords
@@ -57,7 +27,7 @@ Using generarated security password: atlk900s-2d32-11d3-212d-sl49fh56
 ### Secured Endpoints with predefined user and password
 Specify a 'user' and 'password' in the application.properties file
 ```
-spring.security.user.name=sdubois
+spring.security.user.name=myuser
 spring.security.user.password=mypassword
 ```
 
