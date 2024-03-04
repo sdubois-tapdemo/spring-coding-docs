@@ -29,6 +29,25 @@ Various properties can be specified inside your application.properties file, ins
 ```
 management.endpoints.web.exposure.include=health,info   // define what endpoints should be exposed
 management.info.env.enabled=true 			// exposes /actuator/info
+info.app.name=My Super Cool App
+info.app.description=A crazy and fun app, yoohoo!
+info.app.version=1.0.0
+```
+
+### Health Endpoint
+```
+{"status":"UP"} 
+```
+
+### Info Endpoint
+Properties starting with info defined in the application.properties files, will be used by /info
+```
+{
+  "app": {
+    "name": "My Super Cool App",
+    "description": "A crazy and fun app, yoohoo!",
+    "version": "1.0.0"
+}
 ```
 
 
