@@ -39,8 +39,7 @@ Automatically restarts your application when code is updated. More details [Spri
 ```
 To enable it in IntelliJ CE, navigate to: 
 - IntelliJ -> Settings -> Build, Execution, Deployment -> Compiler and enable "Build project automatically"
-- IntelliJ -> Settings -> Advanced Settings -> Allow auto-make to (enable)
-
+- IntelliJ -> Settings -> Advanced Settings -> Allow auto-make to start even deployed application is already running (enable)
 
 ## Maven Project Directory Structure
 ```
