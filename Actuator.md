@@ -10,10 +10,10 @@ Spring Boot Actuator is a module that provides production-ready features to moni
 ## Actuator Types
 Endpoints are prefixed with: /actuator. Here is a list of standard actuators
 
-| Endpoingt | Description |
+| Endpoingt | Default | Description |
 | --- | --- |
-| /actuator/health | Health information about your application |
-| /actuator/info | The /info endpoint can provide information about your application |
+| /actuator/health | {"status":"UP"} | Health information about your application |
+| /actuator/info | {} | The /info endpoint can provide information about your application |
 
 ## Spring Boot Actuator dependancy in pom.xml
 ```
