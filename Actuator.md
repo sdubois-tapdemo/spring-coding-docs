@@ -7,13 +7,19 @@ Spring Boot Actuator is a module that provides production-ready features to moni
 - Simply add the dependency to your POM file
 - REST endpoints are automatically added to your application
 
+## Spring Boot Starters
+A full list of the Spring Actuators can be found here [Spring Actuators](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints)
+
 ## Actuator Types
-Endpoints are prefixed with: /actuator. Here is a list of standard actuators
+Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here is a list of standard actuators
 
 | Endpoingt | Default | Description |
 | --- | --- | --- |
-| /actuator/health | {"status":"UP"} | Health information about your application |
-| /actuator/info | {} | The /info endpoint can provide information about your application |
+| /health | {"status":"UP"} | Health information about your application |
+| /info | {} | The /info endpoint can provide information about your application |
+| /auditevents | {} | Audit events for your application |
+| /beans | {} | List of all beans registered in the Spring application context |
+| /mappings | {} | List of all @RequestMapping paths |
 
 ## Spring Boot Actuator dependancy in pom.xml
 ```
@@ -27,8 +33,9 @@ Endpoints are prefixed with: /actuator. Here is a list of standard actuators
 Various properties can be specified inside your application.properties file, inside your application.yaml file, or as command line switches.
 [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
 ```
-management.endpoints.web.exposure.include=health,info   // define what endpoints should be exposed
-management.info.env.enabled=true 			// exposes /actuator/info
+# Actuator Endpoints Definition
+management.endpoints.web.exposure.include=health,info.beans,mappings
+management.info.env.enabled=true
 info.app.name=My Super Cool App
 info.app.description=A crazy and fun app, yoohoo!
 info.app.version=1.0.0
@@ -36,7 +43,9 @@ info.app.version=1.0.0
 
 ### Health Endpoint
 ```
-{"status":"UP"} 
+{
+  "status": "UP"
+}
 ```
 
 ### Info Endpoint
