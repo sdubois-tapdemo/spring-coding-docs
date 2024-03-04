@@ -26,7 +26,7 @@ Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here 
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
+    <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 ```
 
@@ -48,22 +48,16 @@ info.app.description=A crazy and fun app, yoohoo!
 info.app.version=1.0.0
 ```
 
-### Health Endpoint
+### Secured Endpoints with generated Passwords
+Login as user 'user' and take a generated password shown in the console
 ```
-{
-  "status": "UP"
-}
-```
-
-### Info Endpoint
-Properties starting with info defined in the application.properties files, will be used by /info
-```
-{
-  "app": {
-    "name": "My Super Cool App",
-    "description": "A crazy and fun app, yoohoo!",
-    "version": "1.0.0"
-}
+Using generarated security password: atlk900s-2d32-11d3-212d-sl49fh56
 ```
 
+### Secured Endpoints with predefined user and password
+Specify a 'user' and 'password' in the application.properties file
+```
+spring.security.user.name=sdubois
+spring.security.user.password=mypassword
+```
 
