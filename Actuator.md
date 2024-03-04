@@ -30,8 +30,11 @@ Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here 
 Various properties can be specified inside your application.properties file, inside your application.yaml file, or as command line switches.
 [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
 ```
-# Actuator Endpoints Definition
+# Actuator Endpoints Definition (selective or just '*' for all)
 management.endpoints.web.exposure.include=health,info.beans,mappings
+management.endpoints.web.exposure.include=*
+
+# Configure the Info Endpoingt
 management.info.env.enabled=true
 info.app.name=My Super Cool App
 info.app.description=A crazy and fun app, yoohoo!
