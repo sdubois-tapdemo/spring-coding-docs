@@ -69,7 +69,7 @@ project
 
 ## Maven Commands
 
-## mvn Package
+## mvn package
 This command is used to execute all Maven phases until the package phase. The mvn package compiles, verifies, and builds the project.
 
 Additionally, the mvn package creates the JAR file and places it in a specific folder under a specific folder.
@@ -80,7 +80,7 @@ mvn package
 ## mvn clean install
 This Maven command line aids in executing a clean build lifecycle and installs the build phase in the default build cycle. This build lifecycle may have its build phases, and there are different build goals within each build.
 ```
-mvn package
+mvn install
 ```
 Moreover, the mvn clean install command ensures that the build target is removed for a new build and adds the mvn clean install target.
 

@@ -2,29 +2,63 @@
 Various properties can be specified inside your application.properties file, inside your application.yaml file, or as command line switches.
 [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
 
-## Properties Examples
+## Properties Groups
+
+| Group | Description |
+| --- | --- |
+| Core | un |
+| Web | un |
+| Security | un |
+| Data | un |
+| Actuator | un |
+| Integration | un |
+| DwvTools | un |
+| Testing | un |
+
+## Core Properties
 ```
-server.port=8585	## Server Port for HTTP server
-socker.team=FC Basel	## Custom Property
+# Log levels severity mapping (TRACE,DEBUG,INFO,WARN,ERROR,FATAL,OFF)
+logging.level.org.springframework=DEBUG
+logging.level.org.hibernate=TRACE
+logging.level.com.luv2code=INFO
+
+# Log file name
+logging.file.name=my-crazy-stuff.log
+logging.file.path=c:/myapps/demo
 ```
 
-## Directory Structore
+## Web Properties
 ```
-project
-  |__ pom.xml
-  |__ src
-  |    |__ main
-  |    |    |__ java
-  |    |    |__ resources
-  |    |           |__ application.properties
-  |    |
-  |    |__ test
-  |         |__ java
-  |
-  |__ target
-
+server.port=8585        ## Server Port for HTTP server
+socker.team=FC Basel    ## Custom Property
 ```
 
+## Security Properties
+```
+```
+
+## Data Properties
+```
+```
+
+## Actuator Properties
+```
+# Use wildcard '*' to expose all endpoints or expose individuell endpoints with a comma delimited list
+management.endpoints.web.exposure.include=health,info.beans,mappings
+management.endpoints.web.exposure.include=*
+
+# Exclude individual endpoints with a comma-delimited list
+management.endpoints.web.exposure.exclude=health
+
+# Configure the Info Endpoints
+management.info.env.enabled=true
+```
+
+## Integration Properties
+## DwvTools Properties
+## Testing Properties
+
+# Using Properties
 ## Read Application Properties in Java
 ```
 public class myClass {
