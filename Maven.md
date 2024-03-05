@@ -29,6 +29,12 @@ A list of Maven Plugins can be found under https://maven.apache.org/plugins.
 | --- | --- |
 | spring-boot-maven-plugin | Provides: mvn spring-boot:run |
 
+## Spring Boot Maven Plugin
+The [Spring Boot Maven Plugin](https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/maven-plugin/index.html)  provides Spring Boot support in Maven, allowing you to package executable jar or war archives and run an application “in-place”.
+
+
+
+
 ## Spring Boot Dev Tools
 Automatically restarts your application when code is updated. More details [Spring Boot Dev Tools](https://www.baeldung.com/spring-boot-devtools). Add the following lines to the pom.xml 
 ```
@@ -63,6 +69,34 @@ project
 
 ## Maven Commands
 
+## mvn Package
+This command is used to execute all Maven phases until the package phase. The mvn package compiles, verifies, and builds the project.
+
+Additionally, the mvn package creates the JAR file and places it in a specific folder under a specific folder.
+```
+mvn package
+```
+
+## mvn clean install
+This Maven command line aids in executing a clean build lifecycle and installs the build phase in the default build cycle. This build lifecycle may have its build phases, and there are different build goals within each build.
+```
+mvn package
+```
+Moreover, the mvn clean install command ensures that the build target is removed for a new build and adds the mvn clean install target.
+
+## mvn compile
+The Maven command: mvn compile is used to compile the source code. Additionally, the mvn compile compiles the classes stored at a particular target or a class.
+
+The mvn compile is similar to the previous mvn compiler: compile command, but it runs the entire Maven life cycle up to compile. You can transform the Java files into class files along with the maven compiler plugin itself.
+```
+mvn compile
+```
+
+
+
+
+
+
 | mvn compile | xxx |
 | mvn clean compile test | xxx |
 | mvn sprint-boot:run | xxx |
@@ -77,6 +111,7 @@ mvn spring:run
 ```
 ```
 mvn clean compile test
-mvn spring:run 
+mvn spring-boot:run -Dspring-boot.run.profiles=local
+
 ```
 

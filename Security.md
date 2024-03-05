@@ -12,6 +12,7 @@ Spring Security is a framework that focuses on providing both authentication and
 
 ## Spring Security dependancy in pom.xml
 ```
+<!-- ADDING SUPPORT FOR SPRING SECURITY -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>

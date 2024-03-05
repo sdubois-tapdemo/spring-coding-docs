@@ -21,6 +21,7 @@ Endpoints are prefixed with: /actuator ie. http://localhost:8080/actuator. Here 
 
 ## Spring Boot Actuator dependancy in pom.xml
 ```
+<!-- ADDING SUPPORT FOR SPRING ACTUATOR -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
