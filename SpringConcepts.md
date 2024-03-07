@@ -12,7 +12,7 @@ The approach of outsourcing the construction and management of objects.
 - Java Source Code (modern)
 
 
-# Java Bean
+# Java Beans
 ## Ceate a Spring Bean
 
 ```
@@ -24,7 +24,7 @@ public class MyClass {
 ```
 
 ## Bean Scopes
-Default scope is singleton
+Default scope is singleton Scope?
 - Scope refers to the lifecycle of a bean
 - How long does the bean live?
 - How many instances are created?
@@ -59,6 +59,59 @@ public class DemoController {
   }  
 }
 ```
+### What Is a Prototyoe Scope?
+Prototype scope: new object instance for each injection
+```
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public class CricketCoach implements Coach {
+
+}
+```
+This has the result that both theCoach and theAnotherCoach are seperate instances (Beans)
+```
+@RestController
+public class DemoController {
+  private Coach myCoach;
+  private Coach anotherCoach;
+
+  @Autowired
+  // Both theCoach and theAnotherCoach point to the same instance because cricketCoach is a singleton
+  public DemoController(@Qualifier("cricketCoach") Coach theCoach,
+                        @Qualifier("cricketCoach") Coach theAnotherCoach) {
+    myCoach = theCoach;
+    anotherCoach = theAnotherCoach;
+  } 
+}
+```
+
+## Bean Lifecycle Methods / Hooks
+- You can add custom code during bean initialization
+	- Calling custom business logic methods
+	- Setting up handles to resources (db, sockets, file etc)
+- You can add custom code during bean destruction
+	- Calling custom business logic method
+	- Clean up handles to resources (db, sockets, files etc)
+
+### Init and Destroy method configuration
+```
+@Component
+public class CricketCoach implements Coach {
+  public CricketCoach() {
+    System.out.println("In constructor: " + getClass().getSimpleName());
+  }
+
+  @PostConstruct     // (init)
+  public void doMyStartupStuff() {
+    System.out.println("In doMyStartupStuff(): " + getClass().getSimpleName());
+  }
+
+  @PreDestroy        // (destry)
+  public void doMyCleanupStuff() {
+    System.out.println("In doMyCleanupStuff(): " + getClass().getSimpleName());
+  }
+}
+```
 
 ## Explicitly Specify Bean Scope
 ```
@@ -69,6 +122,73 @@ public class DemoController {
   }
 ```
 
+## Configuring Beans with Java Code
+### How to create a Bean with Java Code
+1. Create @Configuration class
+```
+package com.luv2code.springcoredemo.config;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class SportConfig {
+…
+}
+```
+2. Define @Bean method to configure the bean
+```
+@Configuration
+public class SportConfig {
+  @Bean  // The bean id defaults to the method name
+  public Coach swimCoach() {
+    return new SwimCoach();
+  }
+}
+```
+
+3. Inject the bean into our controller
+```
+@RestController
+public class DemoController {
+  private Coach myCoach;
+
+  @Autowired
+  public DemoController(@Qualifier("swimCoach") Coach theCoach) {
+    System.out.println("In constructor: " + getClass().getSimpleName());
+    myCoach = theCoach;
+  }
+}
+```
+
+### Use case for @Bean
+In example accessing AWS SDK Java Classes where not source code is available
+- Make an existing third-party class available to Spring framework
+- You may not have access to the source code of third-party class
+- However, you would like to use the third-party class as a Spring bean
+
+### Configure AWS S3 Client using @Bean
+```
+package com.luv2code.springcoredemo.config;
+…
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+
+@Configuration
+public class DocumentsConfig {
+  @Bean
+  public S3Client remoteClient() {
+    // Create an S3 client to connect to AWS S3
+    ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
+    Region region = Region.US_EAST_1;
+    S3Client s3Client = S3Client.builder()
+          .region(region)
+          .credentialsProvider(credentialsProvider)
+          .build();
+
+    return s3Client;
+  }
+}
+```
 
 
 
