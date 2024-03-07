@@ -11,11 +11,73 @@ The approach of outsourcing the construction and management of objects.
 - Java Annotations (modern)
 - Java Source Code (modern)
 
-## Spring Dependency Injection
+
+# Java Bean
+## Ceate a Spring Bean
+
+```
+@Component
+public class MyClass { 
+  private final Book book;
+
+} 
+```
+
+## Bean Scopes
+Default scope is singleton
+- Scope refers to the lifecycle of a bean
+- How long does the bean live?
+- How many instances are created?
+- How is the bean shared?
+
+| Scode | Description |
+| --- | --- |
+| singleton | Create a single shared instance of the bean. Default scope. |
+| prototyoe | Creates a new bean instance for each container request. |
+| request | Scoped to an HTTP web request. Only used for web apps. |
+| session | Scoped to an HTTP web session. Only used for web apps. |
+| global-session | Scoped to a global HTTP web session. Only used for web apps. |
+
+### What Is a Singleton?
+- Spring Container creates only one instance of the bean, by default
+- It is cached in memory
+- All dependency injections for the bean
+	- will reference the SAME bean
+
+```
+@RestController
+public class DemoController {
+  private Coach myCoach;
+  private Coach anotherCoach;
+
+  @Autowired
+  // Both theCoach and theAnotherCoach point to the same instance because cricketCoach is a singleton
+  public DemoController(@Qualifier("cricketCoach") Coach theCoach,
+                        @Qualifier("cricketCoach") Coach theAnotherCoach) {
+    myCoach = theCoach;
+    anotherCoach = theAnotherCoach;
+  }  
+}
+```
+
+## Explicitly Specify Bean Scope
+```
+  @Component
+  @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+  public class CricketCoach implements Coach {
+
+  }
+```
+
+
+
+
+# Spring Dependency Injection
 Dependency Injection (DI) is a design pattern. It promotes loose coupling and modularity by providing dependencies at runtime and separates the concern of object creation from business logic. Spring provides a dependency injection container which abstracts away the logic for object creation. To manage any object by Spring, we annotate the class as @Component or @Service.
 The dependency inversion principle.
 - The client delegates to another object
 - the responsibility of providing its dependencies.
+
 
 ### Injection Types
 There are multiple types of injection with Spring. [Setter injection versus constructor injection](https://spring.io/blog/2007/07/11/setter-injection-versus-constructor-injection-and-the-use-of-required).
@@ -131,6 +193,15 @@ Instead of creating all beans up front, we can specify lazy initialization
 	- It is needed for dependency injection
 	- Or it is explicitly requested
 - Add the @Lazy annotation to a given class
+
+Advantages
+- Only create objects as needed
+- May help with faster startup time if you have large number of components
+
+Disadvantages
+- If you have web related components like @RestController, not created until requested
+- May not discover configuration issues until too late
+- Need to make sure you have enough memory for all beans once created
 
 ## Spring AutoWiring
 For dependency injection, Spring can use autowiring

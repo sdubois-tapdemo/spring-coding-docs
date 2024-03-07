@@ -25,6 +25,9 @@ logging.level.com.luv2code=INFO
 # Log file name
 logging.file.name=my-crazy-stuff.log
 logging.file.path=c:/myapps/demo
+
+# Lazy Initialization - Global configuration, All beans are lazy, no beans are created until needed
+spring.main.lazy-initialization=true
 ```
 
 ## Web Properties
