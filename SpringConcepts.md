@@ -43,6 +43,21 @@ public class MyClass {
 }
 ```
 
+If thera are multiple beans that qualify for injection, an error message apears and the application won't start
+```
+Parameter 0 of constructor in com.luv2code.springcoredemo.rest.DemoController
+required a single bean, but 4 were found:
+```
+The solution is to use the @Qualifier annotation to specify which one to use.
+```
+  @Autowired
+  public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+    myCoach = theCoach;
+  }
+```
+INPORTANT: Specify the bean id: cricketCoach Same name as class, first character lower-case
+
+
 ### Setter Injection
 - Use this when you have optional dependencies
 - If dependency is not provided, your app can provide reasonable default logic
@@ -61,6 +76,21 @@ public class DemoController {
 }
 ```
 
+If thera are multiple beans that qualify for injection, an error message apears and the application won't start
+```
+Parameter 0 of constructor in com.luv2code.springcoredemo.rest.DemoController
+required a single bean, but 4 were found:
+```
+The solution is to use the @Qualifier annotation to specify which one to use.
+```
+  @Autowired
+  public void setCoach(@Qualifier("cricketCoach") Coach theCoach) {
+    myCoach = theCoach;
+  }
+```
+INPORTANT: Specify the bean id: cricketCoach Same name as class, first character lower-case
+
+
 ### Field Injection
 In field injection, Spring directly sets the dependencies into the fields of a class, which you annotate as @Autowired. When Spring creates an instance of the class, it uses reflection to iterate over the fields and injects dependencies after creating the instance.
 - In the early days, field injection was popular on Spring projects
@@ -77,21 +107,6 @@ public class MyClass {
 
 }
 ```
-
-### Autowiring and Qualifiers
-If thera are multiple beans that qualify for injection, an error message apears and the application won't start
-```
-Parameter 0 of constructor in com.luv2code.springcoredemo.rest.DemoController
-required a single bean, but 4 were found:
-```
-The solution is to use the @Qualifier annotation to specify which one to use.
-```
-  @Autowired
-  public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
-    myCoach = theCoach;
-  }  
-```
-INPORTANT: Specify the bean id: cricketCoach Same name as class, first character lower-case
 
 ## Spring AutoWiring
 For dependency injection, Spring can use autowiring
