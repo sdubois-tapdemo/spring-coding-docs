@@ -29,16 +29,34 @@ logging.file.path=c:/myapps/demo
 
 ## Web Properties
 ```
-server.port=8585        ## Server Port for HTTP server
-socker.team=FC Basel    ## Custom Property
+# HTTP server port
+server.port=7070
+
+# Context path of the application
+server.servlet.context-path=/my-silly-app
+
+# Default HTTP session time out
+server.servlet.session.timeout=15m
 ```
 
 ## Security Properties
 ```
+# Default user name
+spring.security.user.name=admin
+# Password for default user
+spring.security.user.password=topsecret
 ```
 
 ## Data Properties
 ```
+# JDBC URL of the database
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+
+# Login username of the database
+spring.datasource.username=scott
+
+# Login password of the database
+spring.datasource.password=tiger
 ```
 
 ## Actuator Properties
@@ -52,6 +70,9 @@ management.endpoints.web.exposure.exclude=health
 
 # Configure the Info Endpoints
 management.info.env.enabled=true
+
+# Base path for actuator endpoints
+management.endpoints.web.base-path=/actuator
 ```
 
 ## Integration Properties
