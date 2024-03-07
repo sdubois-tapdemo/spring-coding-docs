@@ -70,7 +70,7 @@ public class DemoController {
   private Coach myCoach;
 
   @Autowired
-  public void doSomeStuff(Coach theCoach) {
+  public void setCoach(Coach theCoach) {
     myCoach = theCoach;
   }
 }
@@ -107,6 +107,30 @@ public class MyClass {
 
 }
 ```
+
+### @Primary Annotation
+Instead of specifying a coach by name using @Qualifier, the @Primary Annotation can be set on the Bean itself to specify the Primary Bean to be used. 
+
+```
+@Primary
+@Component
+public class CricketCoach implements Coach {
+
+    private Coach myCoach;
+
+    @Override
+    public String getDailyWorkout() {
+        return "Practice fast bowling for 15min\n";
+    }
+}
+```
+
+### Lazy Initialization
+Instead of creating all beans up front, we can specify lazy initialization
+- A bean will only be initialized in the following cases:
+	- It is needed for dependency injection
+	- Or it is explicitly requested
+- Add the @Lazy annotation to a given class
 
 ## Spring AutoWiring
 For dependency injection, Spring can use autowiring
