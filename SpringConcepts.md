@@ -91,6 +91,7 @@ The solution is to use the @Qualifier annotation to specify which one to use.
     myCoach = theCoach;
   }  
 ```
+INPORTANT: Specify the bean id: cricketCoach Same name as class, first character lower-case
 
 ## Spring AutoWiring
 For dependency injection, Spring can use autowiring
