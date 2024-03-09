@@ -138,7 +138,7 @@ public class SportConfig {
 ```
 @Configuration
 public class SportConfig {
-  @Bean  // The bean id defaults to the method name
+  @Bean  // The bean id defaults to the method name => ClassName but a lovercase first letter
   public Coach swimCoach() {
     return new SwimCoach();
   }
