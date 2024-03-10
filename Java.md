@@ -89,6 +89,103 @@ Abstract class and interface are both used to define contracts in object-oriente
 | Inheritance | A class can inherit from only one abstract class, but it can implement multiple interfaces. This is because an abstract class represents a type of object, while an interface represents a set of behaviors. |
 | --- | --- |
 
+## Abstract methods
+Abstract methods are those types of methods that don’t require implementation for its declaration. These methods don’t have a body which means no implementation. A few properties of an abstract method are:
+- An abstract method in Java is declared through the keyword “abstract”.
+- While the declaration of the abstract method, the abstract keyword has to be placed before the name of the method.
+- There is no body in an abstract method, only the signature of the method is present. 
+- An abstract method in Java doesn’t have curly braces, but the end of the method will have a semicolon (;)
+
+### Abstract method in an abstract clas
+```
+//abstract class
+abstract class Sum{
+   /* These two are abstract methods, the child class
+    * must implement these methods
+    */
+   public abstract int sumOfTwo(int n1, int n2);
+   public abstract int sumOfThree(int n1, int n2, int n3);
+	
+   //Regular method 
+   public void disp(){
+	System.out.println("Method of class Sum");
+   }
+}
+//Regular class extends abstract class
+class Demo extends Sum{
+
+   /* If I don't provide the implementation of these two methods, the
+    * program will throw compilation error.
+    */
+   public int sumOfTwo(int num1, int num2){
+	return num1+num2;
+   }
+   public int sumOfThree(int num1, int num2, int num3){
+	return num1+num2+num3;
+   }
+   public static void main(String args[]){
+	Sum obj = new Demo();
+	System.out.println(obj.sumOfTwo(3, 7));
+	System.out.println(obj.sumOfThree(4, 3, 19));
+	obj.disp();
+   }
+}
+```
+Output:
+```
+10
+26
+Method of class Sum
+```
+
+
+### Abstract method in interface
+```
+//Interface
+interface Multiply{
+   //abstract methods
+   public abstract int multiplyTwo(int n1, int n2);
+   
+   /* We need not to mention public and abstract in interface
+    * as all the methods in interface are 
+    * public and abstract by default so the compiler will
+    * treat this as 
+    * public abstract multiplyThree(int n1, int n2, int n3);
+    */
+   int multiplyThree(int n1, int n2, int n3);
+
+   /* Regular (or concrete) methods are not allowed in an interface
+    * so if I uncomment this method, you will get compilation error
+    * public void disp(){
+    *    System.out.println("I will give error if u uncomment me");
+    * }
+    */
+}
+
+class Demo implements Multiply{
+   public int multiplyTwo(int num1, int num2){
+      return num1*num2;
+   }
+   public int multiplyThree(int num1, int num2, int num3){
+      return num1*num2*num3;
+   }
+   public static void main(String args[]){
+      Multiply obj = new Demo();
+      System.out.println(obj.multiplyTwo(3, 7));
+      System.out.println(obj.multiplyThree(1, 9, 0));
+   }
+}
+```
+Output:
+```
+21
+0
+```
+
+
+
+
+
 # Java Lambda Expression
 ## Functional Interfaces
 ```
