@@ -249,17 +249,42 @@ public class LambdaDemo {
 
 
 # Java Objects
-## List
+## Collections
 
 [![Collections](https://media.geeksforgeeks.org/wp-content/uploads/20240305183037/Collections-in-Java-768.webp)
 
 | Object | Description |
 | --- | --- |
 | List<E> | It is an ordered collection of objects in which duplicate values can be stored. |
-| ArrayList<E> | It is an ordered collection of objects in which duplicate values can be stored. |
+| ArrayList<E> | ArrayList is increased automatically if the collection grows or shrinks if the objects are removed from the collection |
 | LinkedList<E> | xxx |
 | Vector<E> | xxx |
 | Stack<E> | xxx |
+
+### ArrayList
+Similar to a List, the size of the ArrayList is increased automatically if the collection grows or shrinks if the objects are removed from the collection. Java ArrayList allows us to randomly access the list. ArrayList can not be used for primitive types, like int, char, etc.
+```
+        // Creating an ArrayList of String type
+        // Type safe ArrayList
+        ArrayList<String> al = new ArrayList<String>();
+ 
+        // Adding elements to above object created
+        // Custom input elements
+        al.add("Geeks");
+        al.add("for");
+        al.add("Geeks");
+ 
+        // Print and display the elements of ArrayList
+        System.out.println(al);
+ 
+        // adding element at index where
+        // element is already present
+        al.add(1, "Hi");
+ 
+        // Print and display the elements of ArrayList
+        System.out.println(al);
+```
+
 
 # Core Examples
 ## Iterating Over a Collection
