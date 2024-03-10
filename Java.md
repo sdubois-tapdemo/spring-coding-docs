@@ -82,6 +82,8 @@ When deciding which concept to use, consider the complexity of your application,
 - A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself## Abstract Classes
 ### Difference between Abstract Class and Interface in Java
 Abstract class and interface are both used to define contracts in object-oriented programming, but there are some key differences between them. [Difference between abstract class and interface](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)
+Definition: An abstract class is a class that cannot be instantiated and can contain both abstract and non-abstract methods. An interface, on the other hand, is a contract that specifies a set of methods that a class must implement.
+Inheritance: A class can inherit from only one abstract class, but it can implement multiple interfaces. This is because an abstract class represents a type of object, while an interface represents a set of behaviors.
 
 # Java Lambda Expression
 ## Functional Interfaces
@@ -93,8 +95,6 @@ parameter -> expression
 ```
 # Functional Interfaces
 It’s recommended that all functional interfaces have an informative @FunctionalInterface annotation. This clearly communicates the purpose of the interface, and also allows a compiler to generate an error if the annotated interface does not satisfy the conditions. Any interface with a SAM(Single Abstract Method) is a functional interface, and its implementation may be treated as lambda expressions. [Documentation: functional interfaces](https://www.baeldung.com/java-8-functional-interfaces).
-Definition: An abstract class is a class that cannot be instantiated and can contain both abstract and non-abstract methods. An interface, on the other hand, is a contract that specifies a set of methods that a class must implement.
-Inheritance: A class can inherit from only one abstract class, but it can implement multiple interfaces. This is because an abstract class represents a type of object, while an interface represents a set of behaviors.
 
 
 
