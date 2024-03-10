@@ -25,7 +25,26 @@ Non-primitive data types are called reference types because they refer to object
 Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. 
 
 # Java Conditions
+## Java Conditions
 - [Java Conditions and If Statements](https://www.w3schools.com/java/java_conditions.asp)
+- [Short Hand If...Else](https://www.w3schools.com/java/java_conditions_shorthand.asp)
+- [Java Switch Statements](https://www.w3schools.com/java/java_switch.asp)
+- [Loops](https://www.w3schools.com/java/java_while_loop.asp)
+- [Java For Loop](https://www.w3schools.com/java/java_for_loop.asp)
+- [For-Each Loop](https://www.w3schools.com/java/java_foreach_loop.asp)
+# Stop / Continue
+- [Java Break](https://www.w3schools.com/java/java_break.asp)
+## Arrays
+- [Java Arrays](https://www.w3schools.com/java/java_arrays.asp)
+- [Loop Through an Array](https://www.w3schools.com/java/java_arrays_loop.asp)
+- [Multidimensional Arrays](https://www.w3schools.com/java/java_arrays_multi.asp)
+## Java Methods
+- [Java Methods](https://www.w3schools.com/java/java_methods.asp)
+- [Java Method Parameters](https://www.w3schools.com/java/java_methods_param.asp)
+- [Java Method Overloading](https://www.w3schools.com/java/java_methods_overloading.asp)
+## Java Scope
+- [Java Scope](https://www.w3schools.com/java/java_scope.asp)
+- [Java Recursion](https://www.w3schools.com/java/java_recursion.asp)
 
 # Java Type Casting
 Type casting is when you assign a value of one primitive data type to another type.
