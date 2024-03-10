@@ -74,6 +74,12 @@ StudentEJB is a stateless session EJB. It provides a method getStudentDetails() 
 When deciding which concept to use, consider the complexity of your application, the features you need, and the resources you have. Java Beans are great for simple, small-scale applications, while POJOs offer more flexibility and EJBs are suitable for large-scale, enterprise applications.
 
 # Java Conceps
+## method reference operator / Double colon (::) operator
+The double colon (::) operator, also known as method reference operator in Java, is used to call a method by referring to it with the help of its class directly. They behave exactly as the lambda expressions. The only difference it has from lambda expressions is that this uses direct reference to the method by name instead of providing a delegate to the method
+```
+<Class name>::<method name>
+```
+
 ## Abstract Classes
 - We define an abstract class with the abstract modifier preceding the class keyword
 - An abstract class can be subclassed, but it can’t be instantiated
@@ -215,13 +221,14 @@ public interface Drawable {
 }
 
 @SpringBootApplication
-public class CruddemoApplication {
+public class LambdaDemo {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CruddemoApplication.class, args);
-    }
+	public static void main(String[] args) {
+            SpringApplication.run(LambdaDemo.class, args);
+	}
 
-    public CommandLineRunner commandLineRunner(String[] args) {
+	public CommandLineRunner commandLineRunner(String[] args) {
+	    // without lambda, Drawable implementation using anonymous class  
             Drawable d = new Drawable() {
                 @Override
                 public void draw(int width) {
@@ -230,16 +237,10 @@ public class CruddemoApplication {
             };
             d.draw(10);
 
-            DrawableLambda dLambda;
-
-            dLambda = (width) -> System.out.println("Drawing "+ width);
+	    // with lambda  
+            DrawableLambda dLambda = (width) -> System.out.println("Drawing "+ width);
             dLambda.draw(11);
-
-        };
-
-
-    }
-
+        }
 }
 
 ``` 
