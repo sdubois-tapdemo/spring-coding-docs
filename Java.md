@@ -73,4 +73,28 @@ StudentEJB is a stateless session EJB. It provides a method getStudentDetails() 
 
 When deciding which concept to use, consider the complexity of your application, the features you need, and the resources you have. Java Beans are great for simple, small-scale applications, while POJOs offer more flexibility and EJBs are suitable for large-scale, enterprise applications.
 
+# Java Conceps
+## Abstract Classes
+- We define an abstract class with the abstract modifier preceding the class keyword
+- An abstract class can be subclassed, but it can’t be instantiated
+- If a class defines one or more abstract methods, then the class itself must be declared abstract
+- An abstract class can declare both abstract and concrete methods
+- A subclass derived from an abstract class must either implement all the base class’s abstract methods or be abstract itself## Abstract Classes
+### Difference between Abstract Class and Interface in Java
+Abstract class and interface are both used to define contracts in object-oriented programming, but there are some key differences between them. [Difference between abstract class and interface](https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/)
+
+# Java Lambda Expression
+## Functional Interfaces
+```
+parameter -> expression
+(parameter1, parameter2) -> expression
+(parameter1, parameter2) -> { code block }
+
+```
+# Functional Interfaces
+It’s recommended that all functional interfaces have an informative @FunctionalInterface annotation. This clearly communicates the purpose of the interface, and also allows a compiler to generate an error if the annotated interface does not satisfy the conditions. Any interface with a SAM(Single Abstract Method) is a functional interface, and its implementation may be treated as lambda expressions. [Documentation: functional interfaces](https://www.baeldung.com/java-8-functional-interfaces).
+
+
+
+
 

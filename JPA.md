@@ -61,7 +61,7 @@ https://dev.mysql.com/downloads/mysql/
 ```
 
 ## PostgreSQL
-### Run MySQL as Docker Container
+### Run MySQL as Docker Container (Docker Compose)
 The configuration of the PostgresSQL database along with port, user and password are stored in the 'docker-compose' file. Make sure that docker desktop is installed and running on your machine.
 
 File: docker-compose'
