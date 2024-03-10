@@ -208,7 +208,43 @@ parameter -> expression
 
 ```
 # Functional Interfaces
-It’s recommended that all functional interfaces have an informative @FunctionalInterface annotation. This clearly communicates the purpose of the interface, and also allows a compiler to generate an error if the annotated interface does not satisfy the conditions. Any interface with a SAM(Single Abstract Method) is a functional interface, and its implementation may be treated as lambda expressions. [Documentation: functional interfaces](https://www.baeldung.com/java-8-functional-interfaces).
+In Java, a functional interface is an interface that contains only one abstract method. It acts as a blueprint for a lambda expression or a method reference. The single abstract method represents a single unit of computation, making it ideal for functional programming paradigms. But what exactly is functional programming.
+``` 
+public interface Drawable {
+    void draw(int width);
+}
+
+@SpringBootApplication
+public class CruddemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(CruddemoApplication.class, args);
+    }
+
+    public CommandLineRunner commandLineRunner(String[] args) {
+            Drawable d = new Drawable() {
+                @Override
+                public void draw(int width) {
+                    System.out.println("Drawing "+width);
+                }
+            };
+            d.draw(10);
+
+            DrawableLambda dLambda;
+
+            dLambda = (width) -> System.out.println("Drawing "+ width);
+            dLambda.draw(11);
+
+        };
+
+
+    }
+
+}
+
+``` 
+
+
 
 
 
