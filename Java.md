@@ -253,12 +253,13 @@ public class LambdaDemo {
 
 [![Collections](https://media.geeksforgeeks.org/wp-content/uploads/20240305183037/Collections-in-Java-768.webp)
 
+| Object | Description |
+| --- | --- |
 | List<E> | It is an ordered collection of objects in which duplicate values can be stored. |
 | ArrayList<E> | It is an ordered collection of objects in which duplicate values can be stored. |
 | LinkedList<E> | xxx |
 | Vector<E> | xxx |
 | Stack<E> | xxx |
-| --- | --- |
 
 # Core Examples
 ## Iterating Over a Collection
