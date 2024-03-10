@@ -1,3 +1,30 @@
+# Java Data Types
+As explained in the previous chapter, a variable in Java must be a specified [Data Types](https://www.w3schools.com/java/java_data_types.asp).
+
+## Primitive Data Types
+A primitive data type specifies the size and type of variable values, and it has no additional methods.  There are eight primitive data types in Java:
+
+| Data Type | Size | Description |
+| byte | 1 byte | Stores whole numbers from -128 to 127 |
+| short | 2 bytes | Stores whole numbers from -32,768 to 32,767 |
+| int | 4 bytes | Stores whole numbers from -2,147,483,648 to 2,147,483,647 |
+| long | 8 bytes | Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| float | 4 bytes | Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits |
+| double | 8 bytes | Stores fractional numbers. Sufficient for storing 15 decimal digits |
+| boolean | 1 bit | Stores true or false values |
+| char | 2 bytes | Stores a single character/letter or ASCII values |
+| --- | --- | --- |
+
+## Non-Primitive Data Types
+Non-primitive data types are called reference types because they refer to objects. The main difference between primitive and non-primitive data types are:
+- Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+- Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
+- A primitive type has always a value, while non-primitive types can be null.
+- A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
+
+Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. You will learn more about these in a later chapter.
+
+
 # Java Bean
 A Java Bean is a reusable software component in Java. It is a class that encapsulates many objects into a single object (the bean), and can be instantiated the same way as a normal Java class, public class MyBean { //getters, setters, and methods for the class}. It’s a way to create reusable components for your Java applications.
 
@@ -80,7 +107,33 @@ The double colon (::) operator, also known as method reference operator in Java,
 <Class name>::<method name>
 ```
 
-## Collection interface
+## Java Generics
+A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.
+[The Basics of Java Generics](https://www.baeldung.com/java-generics)
+
+| E | Element (used extensively by the Java Collections Framework) |
+| X | Key |
+| N | Number |
+| T | Type |
+| V | Value |
+| S,U,V |  2nd, 3rd, 4th types |
+| --- | --- |
+
+```
+/**
+ * Generic version of the Box class.
+ * @param <T> the type of the value being boxed
+ */
+public class Box<T> {
+    // T stands for "Type"
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+```
+
+
 ## Abstract Classes
 - We define an abstract class with the abstract modifier preceding the class keyword
 - An abstract class can be subclassed, but it can’t be instantiated
@@ -254,14 +307,41 @@ public class LambdaDemo {
 [![Collections](https://media.geeksforgeeks.org/wp-content/uploads/20240305183037/Collections-in-Java-768.webp)
 
 | Object | Description |
-| --- | --- |
-| List<E> | It is an ordered collection of objects in which duplicate values can be stored. |
-| ArrayList<E> | ArrayList is increased automatically if the collection grows or shrinks if the objects are removed from the collection |
-| LinkedList<E> | xxx |
-| Vector<E> | xxx |
-| Stack<E> | xxx |
+| --- | --- | --- |
+| List | java.util.list | It is an ordered collection of objects in which duplicate values can be stored.  |
+| Set | java.util.Set | It is an ordered collection of objects in which duplicate values can be stored, but does not allow to store duplicate elements |
+| Map <K,V> | java.util.Map | Map stores data in form of key-value pair it does not allow to store duplicate keys but allows duplicate values in java. |
 
-### ArrayList
+### HashMap implements Map <K,V>
+A HashMap is a hash table-based implementation of the Map interface. It permits null keys and values. Also, this class does not maintain any order among its elements and especially, it does not guarantee that the order will remain constant over time.
+``` 
+        Map<String, Integer> vehicles = new HashMap<>();
+ 
+        // Add some vehicles.
+        vehicles.put("BMW", 5);
+        vehicles.put("Mercedes", 3);
+        vehicles.put("Audi", 4);
+        vehicles.put("Ford", 10);
+ 
+        System.out.println("Total vehicles: " + vehicles.size());
+ 
+        // Iterate over all vehicles, using the keySet method.
+        for (String key : vehicles.keySet())
+            System.out.println(key + " - " + vehicles.get(key));
+        System.out.println();
+ 
+        String searchKey = "Audi";
+        if (vehicles.containsKey(searchKey))
+            System.out.println("Found total " + vehicles.get(searchKey) + " " + searchKey + " cars!\n");
+ 
+        // Clear all values.
+        vehicles.clear();
+ 
+        // Equals to zero.
+        System.out.println("After clear operation, size: " + vehicles.size());
+``` 
+
+### ArrayList implements Lists<E>
 Similar to a List, the size of the ArrayList is increased automatically if the collection grows or shrinks if the objects are removed from the collection. Java ArrayList allows us to randomly access the list. ArrayList can not be used for primitive types, like int, char, etc.
 ```
         // Creating an ArrayList of String type
@@ -286,7 +366,7 @@ Similar to a List, the size of the ArrayList is increased automatically if the c
 ```
 
 
-# Core Examples
+# Code Examples
 ## Iterating Over a Collection
 ```
 ```
