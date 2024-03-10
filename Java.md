@@ -22,7 +22,43 @@ Non-primitive data types are called reference types because they refer to object
 - A primitive type has always a value, while non-primitive types can be null.
 - A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
 
-Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. You will learn more about these in a later chapter.
+Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. 
+
+# Java Conditions
+- [Java Conditions and If Statements](https://www.w3schools.com/java/java_conditions.asp)
+
+# Java Type Casting
+Type casting is when you assign a value of one primitive data type to another type.
+In Java, there are two types of casting:
+
+- Widening Casting (automatically) - converting a smaller type to a larger type size (byte -> short -> char -> int -> long -> float -> double)
+- Narrowing Casting (manually) - converting a larger type to a smaller size type (double -> float -> long -> int -> char -> short -> byte)
+
+### Widening Casting (automatically)
+Widening casting is done automatically when passing a smaller size type to a larger size type:
+```
+public class Main {
+  public static void main(String[] args) {
+    int myInt = 9;
+    double myDouble = myInt; // Automatic casting: int to double
+
+    System.out.println(myInt);      // Outputs 9
+    System.out.println(myDouble);   // Outputs 9.0
+  }
+```
+
+### Narrowing Casting (manually)
+Narrowing casting must be done manually by placing the type in parentheses in front of the value:
+```
+public class Main {
+  public static void main(String[] args) {
+    double myDouble = 9.78d;
+    int myInt = (int) myDouble; // Manual casting: double to int
+
+    System.out.println(myDouble);   // Outputs 9.78
+    System.out.println(myInt);      // Outputs 9
+  }
+```
 
 
 # Java Bean
@@ -376,4 +412,4 @@ Similar to a List, the size of the ArrayList is increased automatically if the c
 
 
 
-
+Reference: https://www.w3schools.com/java/java_operators.asp
