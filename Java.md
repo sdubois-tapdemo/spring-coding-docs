@@ -80,6 +80,7 @@ The double colon (::) operator, also known as method reference operator in Java,
 <Class name>::<method name>
 ```
 
+## Collection interface
 ## Abstract Classes
 - We define an abstract class with the abstract modifier preceding the class keyword
 - An abstract class can be subclassed, but it can’t be instantiated
@@ -244,6 +245,25 @@ public class LambdaDemo {
 }
 
 ``` 
+
+
+
+# Java Objects
+## List
+
+[![Collections](https://media.geeksforgeeks.org/wp-content/uploads/20240305183037/Collections-in-Java-768.webp)
+
+| List<E> | It is an ordered collection of objects in which duplicate values can be stored. |
+| ArrayList<E> | It is an ordered collection of objects in which duplicate values can be stored. |
+| LinkedList<E> | |
+| Vector<E> | |
+| Stack<E> | |
+| --- | --- |
+
+# Core Examples
+## Iterating Over a Collection
+```
+```
 
 
 
