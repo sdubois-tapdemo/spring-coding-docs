@@ -94,8 +94,64 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 7ee2317eba81   postgres:14                  "docker-entrypoint.s…"   3 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp   user-profile-database_postgres_1
 ```
 
+## JPA Project Setup
+```
+project
+  |__ pom.xml
+  |__ src
+  |    |__ main
+  |    |    |__ java
+  |    |           |__ com.tanzu.cruddemo
+  |    |                    |__ CruddemoApplication.java   // Application Properties
+  |    |                    |__ entity                     // HTML Files, CSS, JavaScript, imges, etc.
+  |    |                          |__ Student.java         // Auto Configuration Templates (Mustache, FreeMarker, Thymeleaf)
+  |    |    |__ resources
+  |    |           |__ application.properties              // Application Properties
+  |    |           |__ static                              // HTML Files, CSS, JavaScript, imges, etc.
+  |    |           |__ templates                           // Auto Configuration Templates (Mustache, FreeMarker, Thymeleaf)
+  |    |
+  |    |__ test
+  |         |__ java
+  |
+  |__ target
+
+```
+
+
+# JPA interfaces
+## CRUD Repository
+
+## Differences between JpaRepository and EntityManager
+- Level of abstraction: JpaRepository provides a higher level of abstraction than EntityManager, which makes it easier to work with common database operations like CRUD operations.
+- Query methods: JpaRepository provides a set of predefined methods for querying the database, which can be easily extended and customized by developers. EntityManager, on the other hand, requires developers to write raw SQL queries or use the Criteria API to perform queries.
+- Transaction management: JpaRepository provides transaction management out of the box, which simplifies the process of managing database transactions. EntityManager, on the other hand, requires developers to manually manage transactions using the begin(), commit(), and rollback() methods.
+- Entity lifecycle management: EntityManager provides more fine-grained control over the lifecycle of persistent entities, including managing detached and transient entities.
+Performance: JpaRepository can be more performant than EntityManager in certain situations, as it provides a higher level of caching and optimization for common database operations.
+
+## EntityManager
+An EntityManager is a lower-level interface that is part of the Java Persistence API (JPA). It provides a set of methods for managing the lifecycle of persistent entities, including creating, updating, and deleting entities.
+
+### Use Cases
+- Need low-level control over the database operations and want to write custom queries
+- Provides low-level access to JPA and work directly with JPA entities
+- Complex queries that required advanced features such as native SQL queries or stored procedure calls
+- When you have custom requirements that are not easily handled by higher-level abstractions
+- If you need low-level control and flexibility, use EntityManager
+
+## JPA Repository
+A JpaRepository is a high-level interface that is a part of the Spring Data JPA framework. It provides a set of methods for performing common CRUD (Create, Read, Update, Delete) operations on a database table.
+### Use Cases
+- If you want high-level of abstraction, use JpaRepository
+- Spring Data JPA has a JpaRepository interface
+- This provides JPA database access with minimal coding
+
+
+
+
+
 # JPA Entity
 ## JPA Identity - Primary Key
+
 Identifiers in Hibernate represent the primary key of an entity. This implies the values are unique so that they can identify a specific entity, that they aren’t null and that they won’t be modified. There is a greate site regarding [An Overview of Identifiers in](https://www.baeldung.com/hibernate-identifiers)
 ### ID Generation Strategies
 
