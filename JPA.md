@@ -99,7 +99,7 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 Identifiers in Hibernate represent the primary key of an entity. This implies the values are unique so that they can identify a specific entity, that they aren’t null and that they won’t be modified. There is a greate site regarding [An Overview of Identifiers in](https://www.baeldung.com/hibernate-identifiers)
 ### ID Generation Strategies
 
-| Name | Description |
+| Name | Flag | Description |
 | --- | --- | --- |
 | AUTO Generation | GenerationType.AUTO | Pick an appropriate strategy for the particular database |
 | IDENTITY Generation | GenerationType.IDENTITY | Assign primary keys using database identity column |
