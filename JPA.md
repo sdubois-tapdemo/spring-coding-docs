@@ -95,17 +95,17 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 ```
 
 # JPA Entity
-## ID Generation Strategies
-
-## Annotations
+## JPA Identity - Primary Key
+Identifiers in Hibernate represent the primary key of an entity. This implies the values are unique so that they can identify a specific entity, that they aren’t null and that they won’t be modified. There is a greate site regarding [An Overview of Identifiers in](https://www.baeldung.com/hibernate-identifiers)
+### ID Generation Strategies
 
 | Name | Description |
-| --- | --- |
-| GenerationType.AUTO | Pick an appropriate strategy for the particular database |
-| GenerationType.IDENTITY | Assign primary keys using database identity column |
-| GenerationType.SEQUENCE | Assign primary keys using a database sequence |
-| GenerationType.TABLE | Assign primary keys using an underlying database table to ensure uniqueness |
-
+| --- | --- | --- |
+| AUTO Generation | GenerationType.AUTO | Pick an appropriate strategy for the particular database |
+| IDENTITY Generation | GenerationType.IDENTITY | Assign primary keys using database identity column |
+| SEQUENCE Generation | GenerationType.SEQUENCE | Assign primary keys using a database sequence |
+| TABLE Generation | GenerationType.TABLE | Assign primary keys using an underlying database table to ensure uniqueness |
+| Custom Generation | - | define a custom generator by implementing the IdentifierGenerator interface |
 
 ```
 @Entity
