@@ -45,6 +45,24 @@ Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc.
 ## Java Scope
 - [Java Scope](https://www.w3schools.com/java/java_scope.asp)
 - [Java Recursion](https://www.w3schools.com/java/java_recursion.asp)
+## Java Classes and Objects
+- [ava Classes and Objects](https://www.w3schools.com/java/java_classes.asp)
+- [Java Class Attributes](https://www.w3schools.com/java/java_class_attributes.asp)
+- [Java Class Methods](https://www.w3schools.com/java/java_class_methods.asp)
+- [Java Constructors](https://www.w3schools.com/java/java_constructors.asp)
+- [Java Inner Classes](https://www.w3schools.com/java/java_inner_classes.asp)
+- [Java Polymorphism](https://www.w3schools.com/java/java_polymorphism.asp)
+- [Abstract Classes and Methods](https://www.w3schools.com/java/java_abstract.asp)
+- [Java Interface](https://www.w3schools.com/java/java_interface.asp)
+- [Java Enums](https://www.w3schools.com/java/java_enums.asp)
+## Java Modifiers
+- [Java Modifiers](https://www.w3schools.com/java/java_modifiers.asp)
+## Java Encapsulation
+- [Java Encapsulation](https://www.w3schools.com/java/java_encapsulation.asp)
+## Java Packages & API
+- [Java Packages & API](https://www.w3schools.com/java/java_packages.asp)
+## Java Inheritance
+- [Java Inheritance](https://www.w3schools.com/java/java_inheritance.asp)
 
 # Java Type Casting
 Type casting is when you assign a value of one primitive data type to another type.

@@ -94,3 +94,28 @@ CONTAINER ID   IMAGE                        COMMAND                  CREATED    
 7ee2317eba81   postgres:14                  "docker-entrypoint.s…"   3 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp   user-profile-database_postgres_1
 ```
 
+# JPA Entity
+## ID Generation Strategies
+
+## Annotations
+
+| Name | Description |
+| --- | --- |
+| GenerationType.AUTO | Pick an appropriate strategy for the particular database |
+| GenerationType.IDENTITY | Assign primary keys using database identity column |
+| GenerationType.SEQUENCE | Assign primary keys using a database sequence |
+| GenerationType.TABLE | Assign primary keys using an underlying database table to ensure uniqueness |
+
+
+```
+@Entity
+@Table(name="student")
+public class Student {
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+@Column(name="id")
+private int id;
+…
+}
+```
+

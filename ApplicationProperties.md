@@ -21,6 +21,10 @@ Various properties can be specified inside your application.properties file, ins
 logging.level.org.springframework=DEBUG
 logging.level.org.hibernate=TRACE
 logging.level.com.luv2code=INFO
+logging.level.root=warn
+
+# Turn off the Spring Boot banner
+spring.main.banner-mode=off
 
 # Log file name
 logging.file.name=my-crazy-stuff.log
