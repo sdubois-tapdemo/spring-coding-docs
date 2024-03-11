@@ -119,6 +119,11 @@ project
 
 
 # JPA interfaces
+When using Spring Data JPA, developers typically work with two fundamental interfaces: JpaRepository and EntityManager. While both interfaces provide similar functionality for interacting with a database, there are some important differences to be aware of.
+
+- EntityManager Interface
+- JPA Repository Interface
+
 ## CRUD Repository
 
 ## Differences between JpaRepository and EntityManager
@@ -137,6 +142,12 @@ An EntityManager is a lower-level interface that is part of the Java Persistence
 - Complex queries that required advanced features such as native SQL queries or stored procedure calls
 - When you have custom requirements that are not easily handled by higher-level abstractions
 - If you need low-level control and flexibility, use EntityManager
+
+### Annotatoins
+| annotation |  Description |
+| --- | --- |
+| @Repository | Ingerits from @Component and Applied to DAO implementations. Spring will automatically register the DAO implementation (thanks of component scanning) and also provides translation of any JDBC related exceptions |
+| @Transactional | Automagically begin and end a transaction for your JPA code |
 
 ## JPA Repository
 A JpaRepository is a high-level interface that is a part of the Spring Data JPA framework. It provides a set of methods for performing common CRUD (Create, Read, Update, Delete) operations on a database table.
