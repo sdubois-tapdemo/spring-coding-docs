@@ -101,10 +101,12 @@ project
   |__ src
   |    |__ main
   |    |    |__ java
-  |    |           |__ com.tanzu.cruddemo
-  |    |                    |__ CruddemoApplication.java   // Application Properties
-  |    |                    |__ entity                     // HTML Files, CSS, JavaScript, imges, etc.
-  |    |                          |__ Student.java         // Auto Configuration Templates (Mustache, FreeMarker, Thymeleaf)
+  |    |    |      |__ com.tanzu.cruddemo
+  |    |    |               |__ CruddemoApplication.java   // Application Properties
+  |    |    |               |__ doa                        // 
+  |    |    |                     |__ StudentDOA.java      // Define DAO implementation for Student
+  |    |    |               |__ entity                     // 
+  |    |    |                     |__ Student.java         // JPA Entity for Student
   |    |    |__ resources
   |    |           |__ application.properties              // Application Properties
   |    |           |__ static                              // HTML Files, CSS, JavaScript, imges, etc.
@@ -116,6 +118,19 @@ project
   |__ target
 
 ```
+
+File: application.properties
+```
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/student_tracker
+spring.datasource.username=springstudent
+spring.datasource.password=springstudent
+
+# Turn off the Spring Boot banner
+spring.main.banner-mode=off
+
+logging.level.root=warn
+```
+
 
 
 # JPA interfaces
