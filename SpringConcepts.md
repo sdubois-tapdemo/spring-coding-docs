@@ -191,7 +191,6 @@ public class DocumentsConfig {
 ```
 
 
-
 # Spring Dependency Injection
 Dependency Injection (DI) is a design pattern. It promotes loose coupling and modularity by providing dependencies at runtime and separates the concern of object creation from business logic. Spring provides a dependency injection container which abstracts away the logic for object creation. To manage any object by Spring, we annotate the class as @Component or @Service.
 The dependency inversion principle.

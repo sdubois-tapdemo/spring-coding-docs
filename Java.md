@@ -96,6 +96,16 @@ public class Main {
     System.out.println(myInt);      // Outputs 9
   }
 ```
+# Access Specifier 
+In Java, access specifiers are used to defining the visibility and accessibility of class members such as variables, methods, and inner classes. Java has four access specifiers: public, private, protected, and default (also known as package-private). The following table shows the scope of each access specifier in Java:
+
+| Access Specifier | Within Class | Within Package | Outside Package by Subclass only | Outside Package |
+| --- | --- | --- | --- | --- |
+| Private | Y | N | N | N |
+| Default | Y | Y | N | N |
+| Protected | Y | Y | Y | N |
+| Public | Y | Y | Y | Y |
+| Sealed | x             |
 
 
 # Java Bean
@@ -333,6 +343,17 @@ Output:
 
 
 # Java Lambda Expression
+## ForEach Methode
+```
+        List<Student> studentList = new ArrayList<Student>();
+
+        studentList.add(new Student("Paul", "Doe", "paul1@luv2code.com"));
+        studentList.add(new Student("Paul", "Doe", "paul2@luv2code.com"));
+        studentList.add(new Student("Paul", "Doe", "paul3@luv2code.com"));
+
+        studentList.forEach(obj -> studentDAO.save(obj));
+```
+
 ## Functional Interfaces
 ```
 parameter -> expression

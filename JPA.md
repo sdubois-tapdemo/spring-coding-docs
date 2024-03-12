@@ -104,7 +104,8 @@ project
   |    |    |      |__ com.tanzu.cruddemo
   |    |    |               |__ CruddemoApplication.java   // Application Properties
   |    |    |               |__ doa                        // 
-  |    |    |                     |__ StudentDOA.java      // Define DAO implementation for Student
+  |    |    |                     |__ StudentDOA.java      // Data Access Object (DOA) Interface
+  |    |    |                     |__ StudentDOAImpl.java  // Define DAO implementation for Student
   |    |    |               |__ entity                     // 
   |    |    |                     |__ Student.java         // JPA Entity for Student
   |    |    |__ resources
