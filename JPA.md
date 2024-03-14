@@ -173,8 +173,86 @@ A JpaRepository is a high-level interface that is a part of the Spring Data JPA 
 - This provides JPA database access with minimal coding
 
 
+# @Embeddable and @Embedded
+https://www.baeldung.com/jpa-embedded-embeddable
+## @Embeddable
+JPA provides the @Embeddable annotation to declare that a class will be embedded by other entities.
+## @Embedded
 
+## Embeddable Records in Hibernate 6.0 bis 6.1
+https://www.heise.de/hintergrund/Persistenz-in-Java-Neues-seit-Hibernate-ORM-6-9651063.html
 
+## JPA Query Language (JPQL)
+- Query language for retrieving objects
+- Similar in concept to SQL
+- where, like, order by, join, in, etc…
+- However, JPQL is based on entity name and entity fields
+- JPQL Named Parameters are prefixed with a colon : ie. lastName=:theData
+
+```
+// JPQL Query Examples
+TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
+TypedQuery<Student> theQuery = entityManager.createQuery( "FROM Student WHERE lastName=‘Doe’", Student.class);
+TypedQuery<Student> theQuery = entityManager.createQuery( "FROM Student WHERE lastName=‘Doe’ OR firstName=‘Daffy’", Student.class);
+TypedQuery<Student> theQuery = entityManager.createQuery( "FROM Student WHERE email LIKE ‘%luv2code.com’", Student.class);
+
+// JPQL Name Parameters are prefixed with a column ':', theData is a placeholder
+TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student WHERE lastName=:theData", Student.class);
+theQuery.setParameter("theData", name);
+
+List<Student> students = theQuery.getResultList();
+```
+
+IMPORTANT: All JPQL syntax is based on
+entity name and entity fields
+
+### Update Onject
+```
+// Update multiple columnds
+int numRowsUpdated = entityManager.createQuery("UPDATE Student SET lastName=‘Tester’”).executeUpdate();
+
+Student theStudent = entityManager.find(Student.class, 1);
+theStudent.setFirstName("Scooby");
+entityManager.merge(theStudent);
+
+public interface StudentDAO {
+   void update(Student theStudent);
+   public Student findById(Integer id);
+}
+
+@Repository
+public class StudentDOAImpl implements StudentDAO{
+  @Override
+  @Transactional
+  public void update(Student theStudent) {
+    entityManager.merge(theStudent);
+  }
+
+  @Override
+  public Student findById(Integer id) {
+    return entityManager.find(Student.class, id);
+  }
+}
+
+public class CruddemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(CruddemoApplication.class, args);
+  }
+
+  @Bean
+  public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+    return runner -> {
+
+      int studentId = 1;
+      Student myStudent = studentDAO.findById(studentId);
+
+      // Update a Single Object
+      myStudent.setFirstName("Scooby");
+      studentDAO.update(myStudent);
+    }
+  }
+}
+```
 
 # JPA Entity
 ## JPA Identity - Primary Key

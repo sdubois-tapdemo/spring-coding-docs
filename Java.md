@@ -105,7 +105,9 @@ In Java, access specifiers are used to defining the visibility and accessibility
 | Default | Y | Y | N | N |
 | Protected | Y | Y | Y | N |
 | Public | Y | Y | Y | Y |
-| Sealed | x             |
+| Sealed | * | * | * | * |
+
+* Sealing allows classes and interfaces to define their permitted subtypes
 
 
 # Java Bean
@@ -461,8 +463,23 @@ Similar to a List, the size of the ArrayList is increased automatically if the c
 
 
 # Code Examples
-## Iterating Over a Collection
+## Loop's
+### Iterating Over a Collection
 ```
+// Iterating Over a Collection with Lambda
+theStudent.forEach(obj -> System.out.println("XXXX: " + obj));
+
+// Iterating Over a Collection
+for (Student obj : theStudent) {
+    System.out.println("XXXX: " + obj);
+}
+```
+
+## Strings
+### Replace String
+```
+String query_str = "FROM Student WHERE lastName='<string>'";
+query_str.replace("<string>", name);
 ```
 
 
