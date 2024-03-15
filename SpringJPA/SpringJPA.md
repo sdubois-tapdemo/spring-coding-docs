@@ -203,8 +203,7 @@ theQuery.setParameter("theData", name);
 List<Student> students = theQuery.getResultList();
 ```
 
-IMPORTANT: All JPQL syntax is based on
-entity name and entity fields
+IMPORTANT: All JPQL syntax is based on entity name and entity fields
 
 # JPA Entity
 ## JPA Identity - Primary Key
@@ -231,4 +230,56 @@ private int id;
 …
 }
 ```
+
+# Database initialization
+An SQL database can be initialized in different ways depending on what your stack is. Or of course you can do it manually as long as the database is a separate process. [Database initialization](https://docs.spring.io/spring-boot/docs/1.1.0.M1/reference/html/howto-database-initialization.html)
+
+## Initialize a database using Spring JDBC
+
+## Initialize a database using Hibernate
+- JPA/Hibernate provides an option to automagically create database tables
+- Creates tables based on Java code with JPA/Hibernate annotations
+- When you run your app, JPA/Hibernate will drop tables then create them
+- Based on the JPA/Hibernate annotations in your Java code
+- Useful for development and testing
+
+| Propery Value |  Property Description |
+| --- | --- |
+| none | No action will be performed |
+| create-only | Database tables are only created |
+| drop | Database tables are dropped |
+| create | Database tables are dropped followed by database tables creation |
+| create-drop | Database tables are dropped followed by database tables creation.
+On application shutdown, drop the database tables |
+| validate | Validate the database tables schema |
+| update | Update the database tables schema |
+
+
+```
+spring.jpa.hibernate.ddl-auto=create
+```
+
+ddl-auto explicitly and the standard Hibernate property values are none , validate , update , create , and create-drop . Spring Boot chooses a default value for you based on whether it thinks your database is embedded. It defaults to create-drop if no schema manager has been detected or none in all other cases.
+
+## Use a higher level database migration tool
+Spring Boot works fine with higher level migration tools Flyway (SQL-based) and Liquibase (XML). In general we prefer Flyway because it is easier on the eyes, and it isn’t very common to need platform independence: usually only one or at most couple of platforms is needed.
+### Execute Flyway database migrations on startup
+To automatically run Flyway database migrations on startup, add the spring-boot-starter-flyway to your classpath.
+
+
+### Execute Liquibase database migrations on startup
+To automatically run Liquibase database migrations on startup, add the spring-boot-starter-liquibase to your classpath.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
