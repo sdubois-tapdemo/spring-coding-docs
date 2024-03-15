@@ -207,7 +207,7 @@ IMPORTANT: All JPQL syntax is based on
 entity name and entity fields
 
 ### find Onject by Id
-``
+```
 public interface StudentDAO {
   void update(Student theStudent);
   public Student findById(Integer id);
@@ -238,7 +238,7 @@ public class CruddemoApplication {
 ```
 
 ### Query for Objects
-``
+```
 public interface StudentDAO {
   void update(Student theStudent);
   List<Student> findAll();
