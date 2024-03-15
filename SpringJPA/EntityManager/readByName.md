@@ -26,7 +26,7 @@ project
 
 ```
 
-## Delete Object by Id
+## Query for  all Student Objects
 
 ### Student Class (Student.java) 
 ```
@@ -122,7 +122,7 @@ import java.util.List;
 
 public interface StudentDAO {
   List<Student> findAll();
-  void deleteById(Integer id);
+}
 ```
 
 ### StudentDOAImpl Class (StudentDOAImpl.java) 
@@ -137,20 +137,22 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
-@Repository
 public class StudentDOAImpl implements StudentDAO{
   @Override
-  @Transactional
-  public void deleteById(Integer id) {
-    // Opetion-1: Delete object with by JPQL Query
-    Query theQuery = (entityManager.createQuery("DELETE FROM Student WHERE Id=:theData"));
-    theQuery.setParameter("theData", id.toString());
-    theQuery.executeUpdate();
+  public List<Student> findByLastName() {
+        TypedQuery<Student> theQuery;
 
-    // Opetion-2: Find object with entityManager.find(), delete object entityManager.remove()
-    Student theStudent = entityManager.find(Student.class, id);
-    entityManager.remove(theStudent);
-  }
+        // Option-1 Create query with String Replace
+        String query_str = "FROM Student WHERE lastName='<string>'";
+        query_str.replace("<string>", name);
+        System.out.println("QUERRY: " + query_str.replace("<string>", name));
+        theQuery = entityManager.createQuery(query_str.replace("<string>", name), Student.class);
+
+        // Option-2 JPQL Name Parameters are prefixed with a column ':', theData is a placeholder
+        theQuery = entityManager.createQuery("FROM Student WHERE lastName=:theData", Student.class);
+        theQuery.setParameter("theData", name);
+
+        return theQuery.getResultList();
 }
 ```
 
@@ -174,11 +176,19 @@ public class CruddemoApplication {
   @Bean
   public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
     return runner -> {
-    
-      int studentId = 1;
-      System.out.println("Total Rows deleted: " + studentDAO.deleteById(studentId));
+
+      // get a list of students with LastName = "Public"
+      List<Student> theStudent = studentDAO.findByLastName("Public");
+
+      // Option-1: ForEach (Lambda)
+      theStudent.forEach(obj -> System.out.println("Objects: " + obj));
+
+      //Option-2:  For Loop
+      for (Student obj : theStudent) {
+          System.out.println("Objects: " + obj);
+      }
     }
-  } 
+  }
 }
 ```
 

@@ -116,6 +116,10 @@ public class Student {
 
 ### StudentDAO Class (StudentDAO.java) 
 ```
+package com.luv2code.cruddemo.dao;
+import com.luv2code.cruddemo.entity.Student;
+import java.util.List;
+
 public interface StudentDAO {
   List<Student> findAll();
   void update(Student theStudent);
@@ -125,6 +129,16 @@ public interface StudentDAO {
 
 ### StudentDOAImpl Class (StudentDOAImpl.java) 
 ```
+package com.luv2code.cruddemo.dao;
+import com.luv2code.cruddemo.entity.Student;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+
 @Repository
 public class StudentDOAImpl implements StudentDAO{
   @Override
@@ -142,6 +156,16 @@ public class StudentDOAImpl implements StudentDAO{
 
 ### CruddemoApplication Class (CruddemoApplication.java) 
 ```
+package com.luv2code.cruddemo;
+import com.luv2code.cruddemo.dao.StudentDAO;
+import com.luv2code.cruddemo.dao.StudentDOAImpl;
+import com.luv2code.cruddemo.entity.Student;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import java.util.*;
+
 public class CruddemoApplication {
   public static void main(String[] args) {
     SpringApplication.run(CruddemoApplication.class, args);

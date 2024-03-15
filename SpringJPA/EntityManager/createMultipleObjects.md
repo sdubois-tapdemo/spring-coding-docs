@@ -26,7 +26,7 @@ project
 
 ```
 
-## Delete Object by Id
+## Create Object by Id
 
 ### Student Class (Student.java) 
 ```
@@ -121,8 +121,7 @@ import com.luv2code.cruddemo.entity.Student;
 import java.util.List;
 
 public interface StudentDAO {
-  List<Student> findAll();
-  void deleteById(Integer id);
+  void save(Student theStudent);
 ```
 
 ### StudentDOAImpl Class (StudentDOAImpl.java) 
@@ -141,15 +140,8 @@ import java.util.List;
 public class StudentDOAImpl implements StudentDAO{
   @Override
   @Transactional
-  public void deleteById(Integer id) {
-    // Opetion-1: Delete object with by JPQL Query
-    Query theQuery = (entityManager.createQuery("DELETE FROM Student WHERE Id=:theData"));
-    theQuery.setParameter("theData", id.toString());
-    theQuery.executeUpdate();
-
-    // Opetion-2: Find object with entityManager.find(), delete object entityManager.remove()
-    Student theStudent = entityManager.find(Student.class, id);
-    entityManager.remove(theStudent);
+  public void save(Student theStudent) {
+    entityManager.persist(theStudent);
   }
 }
 ```
@@ -175,8 +167,16 @@ public class CruddemoApplication {
   public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
     return runner -> {
     
-      int studentId = 1;
-      System.out.println("Total Rows deleted: " + studentDAO.deleteById(studentId));
+      // create multiple students
+      System.out.println("Creating new Student Object ...");
+      List<Student> studentList = new ArrayList<Student>();
+
+      studentList.add(new Student("John", "Doe", "john@luv2code.com"));
+      studentList.add(new Student("Mary", "Public", "mary@luv2code.com"));
+      studentList.add(new Student("Bonita", "Applebum", "bonita@luv2code.com"));
+
+      // Lambda forEach Loop
+      studentList.forEach(obj -> studentDAO.save(obj));
     }
   } 
 }
