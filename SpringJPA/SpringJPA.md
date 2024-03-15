@@ -243,6 +243,8 @@ An SQL database can be initialized in different ways depending on what your stac
 - Based on the JPA/Hibernate annotations in your Java code
 - Useful for development and testing
 
+ddl-auto explicitly and the standard Hibernate property values are none , validate , update , create , and create-drop . Spring Boot chooses a default value for you based on whether it thinks your database is embedded. It defaults to create-drop if no schema manager has been detected or none in all other cases.
+
 | Propery Value |  Property Description |
 | --- | --- |
 | none | No action will be performed |
@@ -254,11 +256,10 @@ An SQL database can be initialized in different ways depending on what your stac
 | update | Update the database tables schema |
 
 
+Example: 
 ```
 spring.jpa.hibernate.ddl-auto=create
 ```
-
-ddl-auto explicitly and the standard Hibernate property values are none , validate , update , create , and create-drop . Spring Boot chooses a default value for you based on whether it thinks your database is embedded. It defaults to create-drop if no schema manager has been detected or none in all other cases.
 
 ## Use a higher level database migration tool
 Spring Boot works fine with higher level migration tools Flyway (SQL-based) and Liquibase (XML). In general we prefer Flyway because it is easier on the eyes, and it isn’t very common to need platform independence: usually only one or at most couple of platforms is needed.
