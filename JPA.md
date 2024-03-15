@@ -323,7 +323,7 @@ public class CruddemoApplication {
 ```
 
 ### Delete by Name
-``
+```
 public interface StudentDAO {
   List<Student> findAll();
   int deleteByName(String name);
@@ -357,8 +357,8 @@ public class CruddemoApplication {
 }
 ```
 
-## Delete all
-``
+### Delete all
+```
 public interface StudentDAO {
   int deleteAll();
 }
