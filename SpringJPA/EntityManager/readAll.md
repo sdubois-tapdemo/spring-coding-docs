@@ -26,7 +26,7 @@ project
 
 ```
 
-## Delete all Student Objects
+## Read all Student Objects
 
 ### Student Class (Student.java) 
 ```
@@ -117,7 +117,7 @@ public class Student {
 ### StudentDAO Class (StudentDAO.java) 
 ```
 public interface StudentDAO {
-  int deleteAll();
+  List<Student> findAll();
 }
 ```
 
@@ -125,9 +125,12 @@ public interface StudentDAO {
 ```
 public class StudentDOAImpl implements StudentDAO{
   @Override
-  @Transactional
-  public int deleteAll() {
-    retuen entityManager.createQuery("DELETE FROM Student").executeUpdate();
+  public List<Student> findAll() {
+    // create query asc=ascending, desc=descending
+    TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student ORDER BY lastName desc", Student.class);
+
+    // return query results
+    return theQuery.getResultList();
   }
 }
 ```
@@ -143,8 +146,16 @@ public class CruddemoApplication {
   public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
     return runner -> {
 
-      int cnt = studentDAO.deleteAll();
-      System.out.println("Deleted rows: " + cnt);
+      // get a list of students
+      List<Student> theStudent = studentDAO.findAll();
+
+      // Option-1: ForEach (Lambda)
+      theStudent.forEach(obj -> System.out.println("Objects: " + obj));
+
+      //Option-2:  For Loop
+      for (Student obj : theStudent) {
+          System.out.println("Objects: " + obj);
+      }
     }
   }
 }

@@ -26,7 +26,7 @@ project
 
 ```
 
-## Delete all Student Objects
+## Delete Object by Name
 
 ### Student Class (Student.java) 
 ```
@@ -117,17 +117,21 @@ public class Student {
 ### StudentDAO Class (StudentDAO.java) 
 ```
 public interface StudentDAO {
-  int deleteAll();
-}
+  List<Student> findAll();
+  int deleteByName(String name);
 ```
 
 ### StudentDOAImpl Class (StudentDOAImpl.java) 
 ```
+@Repository
 public class StudentDOAImpl implements StudentDAO{
   @Override
   @Transactional
-  public int deleteAll() {
-    retuen entityManager.createQuery("DELETE FROM Student").executeUpdate();
+  public int deleteByName(String name) {
+    Query theQuery = entityManager.createQuery("DELETE FROM Student WHERE lastName=:theData");
+    theQuery.setParameter("theData", name);
+
+    return theQuery.executeUpdate();
   }
 }
 ```
@@ -142,11 +146,11 @@ public class CruddemoApplication {
   @Bean
   public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
     return runner -> {
-
-      int cnt = studentDAO.deleteAll();
+    
+      int cnt = studentDAO.deleteByName("Public");
       System.out.println("Deleted rows: " + cnt);
     }
-  }
+  } 
 }
 ```
 
