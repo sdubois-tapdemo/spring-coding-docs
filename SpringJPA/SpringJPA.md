@@ -249,8 +249,7 @@ An SQL database can be initialized in different ways depending on what your stac
 | create-only | Database tables are only created |
 | drop | Database tables are dropped |
 | create | Database tables are dropped followed by database tables creation |
-| create-drop | Database tables are dropped followed by database tables creation.
-On application shutdown, drop the database tables |
+| create-drop | Database tables are dropped followed by database tables creation.  On application shutdown, drop the database tables |
 | validate | Validate the database tables schema |
 | update | Update the database tables schema |
 
