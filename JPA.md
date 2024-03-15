@@ -206,15 +206,83 @@ List<Student> students = theQuery.getResultList();
 IMPORTANT: All JPQL syntax is based on
 entity name and entity fields
 
+### find Onject by Id
+``
+public interface StudentDAO {
+  void update(Student theStudent);
+  public Student findById(Integer id);
+}
+
+@Repository
+public class StudentDOAImpl implements StudentDAO{
+  @Override
+  public Student findById(Integer id) {
+    return entityManager.find(Student.class, id);
+  }
+}
+
+public class CruddemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(CruddemoApplication.class, args);
+  }
+
+  @Bean
+  public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+    return runner -> {
+
+      int studentId = 1;
+      Student myStudent = studentDAO.findById(studentId);
+    }
+  }
+}
+```
+
+### Query for Objects
+``
+public interface StudentDAO {
+  void update(Student theStudent);
+  List<Student> findAll();
+}
+
+@Repository
+public class StudentDOAImpl implements StudentDAO{
+  @Override
+  public List<Student> findAll() {
+    // create query asc=ascending, desc=descending
+    // TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student ORDER BY lastName desc", Student.class);
+    TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student ORDER BY lastName desc", Student.class);
+
+    // return query results
+    return theQuery.getResultList();
+  }
+}
+
+public class CruddemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(CruddemoApplication.class, args);
+  } 
+
+  @Bean
+  public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+    return runner -> {
+      
+      // get a list of students
+      List<Student> theStudent = studentDAO.findAll();
+
+      // ForEach (Lambda)
+      theStudent.forEach(obj -> System.out.println("Objects: " + obj));
+
+      // For Loop
+      for (Student obj : theStudent) {
+          System.out.println("Objects: " + obj);
+      }
+    }
+  }
+}
+```
+
 ### Update Onject
 ```
-// Update multiple columnds
-int numRowsUpdated = entityManager.createQuery("UPDATE Student SET lastName=‘Tester’”).executeUpdate();
-
-Student theStudent = entityManager.find(Student.class, 1);
-theStudent.setFirstName("Scooby");
-entityManager.merge(theStudent);
-
 public interface StudentDAO {
    void update(Student theStudent);
    public Student findById(Integer id);
@@ -253,6 +321,73 @@ public class CruddemoApplication {
   }
 }
 ```
+
+### Delete by Name
+``
+public interface StudentDAO {
+  List<Student> findAll();
+  int deleteByName(String name);
+}
+
+@Repository
+public class StudentDOAImpl implements StudentDAO{
+  @Override
+  @Transactional
+  public int deleteByName(String name) {
+    Query theQuery = entityManager.createQuery("DELETE FROM Student WHERE lastName=:theData");
+    theQuery.setParameter("theData", name);
+
+    return theQuery.executeUpdate();
+  }
+}
+
+public class CruddemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(CruddemoApplication.class, args);
+  }
+
+  @Bean
+  public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+    return runner -> {
+
+      int cnt = studentDAO.deleteByName("Public");
+      System.out.println("Deleted rows: " + cnt);
+    }
+  }
+}
+```
+
+## Delete all
+``
+public interface StudentDAO {
+  int deleteAll();
+}
+
+public class StudentDOAImpl implements StudentDAO{
+  @Override
+  @Transactional
+  public int deleteAll() {
+    retuen entityManager.createQuery("DELETE FROM Student").executeUpdate();
+  }
+}
+
+public class CruddemoApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(CruddemoApplication.class, args);
+  }
+
+  @Bean
+  public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
+    return runner -> {
+
+      int cnt = studentDAO.deleteAll();
+      System.out.println("Deleted rows: " + cnt);
+    }
+  }
+}
+```
+
+
 
 # JPA Entity
 ## JPA Identity - Primary Key
