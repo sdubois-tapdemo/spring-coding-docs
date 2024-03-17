@@ -23,6 +23,10 @@ logging.level.org.hibernate=TRACE
 logging.level.com.luv2code=INFO
 logging.level.root=warn
 
+# Add logging config to display SQL Statements
+logging.level.org.hibernate.SQL=debug
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
 # Turn off the Spring Boot banner
 spring.main.banner-mode=off
 

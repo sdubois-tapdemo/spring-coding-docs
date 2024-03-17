@@ -258,6 +258,10 @@ ddl-auto explicitly and the standard Hibernate property values are none , valida
 
 Example: 
 ```
+# Add logging config to display SQL Statements
+logging.level.org.hibernate.SQL=debug
+logging.level.org.hibernate.orm.jdbc.bind=trace
+
 spring.jpa.hibernate.ddl-auto=create
 ```
 
