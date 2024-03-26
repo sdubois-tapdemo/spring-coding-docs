@@ -192,9 +192,10 @@ The double colon (::) operator, also known as method reference operator in Java,
 <Class name>::<method name>
 ```
 
-## Java Generics
+# Java Generics
 A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.
 [The Basics of Java Generics](https://www.baeldung.com/java-generics)
+[Java Generics Example Tutorial - Generic Method, Class, Interface](https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface)
 
 | E | Element (used extensively by the Java Collections Framework) |
 | X | Key |
@@ -218,6 +219,8 @@ public class Box<T> {
 }
 ```
 
+## Type Inference
+[Type Inference](https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html)
 
 ## Abstract Classes
 - We define an abstract class with the abstract modifier preceding the class keyword
@@ -388,12 +391,109 @@ public class LambdaDemo {
             d.draw(10);
 
 	    // with lambda  
-            DrawableLambda dLambda = (width) -> System.out.println("Drawing "+ width);
-            dLambda.draw(11);
+            Drawable d = (width) -> System.out.println("Drawing "+ width);
+            d.draw(11);
         }
 }
 
+## Generic Functional Interfaces
+[Generic Functional Interfaces](https://howtodoinjava.com/java/stream/generic-functional-interfaces/)
+```
+@FunctionalInterface
+public interface ArgumentsProcessor<X>
+{
+    X process(X arg1, X arg2);
+}
+```
+
+
 ``` 
+// Generic Functional Interface with ArgumentsProcessor<Integer>
+ArgumentsProcessor<Integer> intProc = new ArgumentsProcessor<Integer>() {
+  @Override
+  public Integer process(Integer arg1, Integer arg2) {
+    return arg1 * arg2;
+  }
+};
+
+System.out.println(intProc.process(2,3));  	//6
+
+// Generic Functional Interface (Lambda) with ArgumentsProcessor<Integer>
+ArgumentsProcessor<Integer> intProcLambda;
+intProcLambda = (x,y) -> (x+y);
+System.out.println(intProcLambda.process(12,3));
+
+// Generic Functional Interface (Lambda) with ArgumentsProcessor<Strings>
+ArgumentsProcessor<String> strProcLambda;
+strProcLambda = (x,y) -> (x+y);
+System.out.println(strProcLambda.process("hallo ","Sacha"));
+``` 
+
+# Interceptors
+
+# Builder Design Pattern
+[Builder Design Pattern in Java](https://www.digitalocean.com/community/tutorials/builder-design-pattern-in-java)
+
+# superclass, Subclasses
+In Java, as in other object-oriented programming languages, classes can be derived from other classes. The derived class (the class that is derived from another class) is called a subclass. The class from which its derived is called the superclass.
+
+# Builder Class? / 
+Builder is a static inner class of the AlertDialog class.
+
+# Mested Class (Embedded or Inner Class)
+In object-oriented programming, an inner class or nested class is a class declared entirely within the body of another class or interface. It is distinguished from a subclass.
+
+[Nested Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
+- Nested classes are divided into two categories: non-static and static
+- Nested classes that are declared static are called static nested classes.
+- A nested class is a member of its enclosing class.
+
+# Method Chaining
+Method Chaining is the practice of calling different methods in a single line instead of calling other methods with the same object reference separately. Under this procedure, we have to write the object reference once and then call the methods by separating them with a (dot.).
+
+Method chaining in Java is a common syntax to invoke multiple methods calls in OOPs. Each method in chaining returns an object. It violates the need for intermediate variables. In other words, the method chaining can be defined as if we have an object and we call methods on that object one after another is called method chaining.
+[Method Chaining](https://www.geeksforgeeks.org/method-chaining-in-java-with-examples/)
+
+Syntax:
+```
+obj.method1().method2().method3();  
+```
+## Example 1
+```
+class A {
+ 
+    private int a;
+    private float b;
+ 
+    A() { System.out.println("Calling The Constructor"); }
+ 
+    public A setint(int a)
+    {
+        this.a = a;
+        return this;
+    }
+ 
+    public A setfloat(float b)
+    {
+        this.b = b;
+        return this;
+    }
+ 
+    void display()
+    {
+        System.out.println("Display=" + a + " " + b);
+    }
+}
+ 
+// Driver code
+public class Example {
+    public static void main(String[] args)
+    {
+        // This is the "method chaining".
+        new A().setint(10).setfloat(20).display();
+    }
+}
+```
 
 
 
