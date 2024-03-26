@@ -395,6 +395,7 @@ public class LambdaDemo {
             d.draw(11);
         }
 }
+```
 
 ## Generic Functional Interfaces
 [Generic Functional Interfaces](https://howtodoinjava.com/java/stream/generic-functional-interfaces/)
