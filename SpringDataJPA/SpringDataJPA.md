@@ -5,6 +5,5 @@ Implementing a data access layer for an application can be quite cumbersome. Too
 
 Spring Data JPA aims to significantly improve the implementation of data access layers by reducing the effort to the amount that’s actually needed. As a developer you write your repository interfaces using any number of techniques, and Spring will wire it up for you automatically. You can even use custom finders or query by example and Spring will write the query for you!
 
-[Spring Data JPA](https://spring.io/projects/spring-data-jpa)
-
+[Spring Data JPA](https://spring.io/projects/spring-data-jpa), [JavaDoc Interface JpaRepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html)
 
