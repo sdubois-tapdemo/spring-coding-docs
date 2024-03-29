@@ -13,3 +13,12 @@ Advanced features available for
 - Query Domain Specific Language (Query DSL) 
 - Defining custom methods (low-level coding)
 [JPA Query Methods](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.at-query)
+
+## Spring HATEOAS
+Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
+[Spring HATEOAS](https://spring.io/projects/spring-hateoas)
+- Spring Data REST endpoints are HATEOAS compliant HATEOAS: 
+	- HypermediaastheEngineofApplicationState
+- Hypermedia-driven sites provide information to access REST interfaces 
+	- Think of it as meta-data for REST data
+
