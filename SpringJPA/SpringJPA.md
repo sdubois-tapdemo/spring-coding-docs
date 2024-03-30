@@ -164,6 +164,8 @@ An EntityManager is a lower-level interface that is part of the Java Persistence
 | --- | --- |
 | @Repository | Ingerits from @Component and Applied to DAO implementations. Spring will automatically register the DAO implementation (thanks of component scanning) and also provides translation of any JDBC related exceptions |
 | @Transactional | Automagically begin and end a transaction for your JPA code |
+| @RequestBody | maps the HttpRequest body to a onto a Java object |
+| @PathVariable | handles template variables in the request URI mapping, and set them as method parameters |
 
 ## JPA Repository
 A JpaRepository is a high-level interface that is a part of the Spring Data JPA framework. It provides a set of methods for performing common CRUD (Create, Read, Update, Delete) operations on a database table.
@@ -172,6 +174,16 @@ A JpaRepository is a high-level interface that is a part of the Spring Data JPA 
 - Spring Data JPA has a JpaRepository interface
 - This provides JPA database access with minimal coding
 
+## Service Layer
+- Service Facade design pattern
+- Intermediate layer for custom business logic
+- Integrate data from multiple sources (DAO/repositories)
+### Service Layer - Best Practice
+- Best practice is to apply transactional boundaries at the service layer
+- It is the service layer’s responsibility to manage transaction boundaries
+- For implementation code
+	- Apply @Transactional on service methods
+	- Remove @Transactional on DAO methods if they already exist
 
 # @Embeddable and @Embedded
 https://www.baeldung.com/jpa-embedded-embeddable

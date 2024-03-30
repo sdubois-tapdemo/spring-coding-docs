@@ -1,4 +1,4 @@
-# SpringJPA - Employee JPA/RestAPI Example Application 
+# SpringJPA - Employee JPA/RestAPI with Entitiy Manager
 
 ## JPA Project Setup
 ```
