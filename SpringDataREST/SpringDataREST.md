@@ -42,11 +42,26 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 ``` 
 
 ## Application Properties
-[Spring Data REST Applicaiton Properties](https://docs.spring.io/spring-data/rest/docs/4.2.0-M2/reference/html/#getting-started.changing-other-properties) 
+[Spring Data REST Applicaiton Properties](https://docs.spring.io/spring-data/rest/docs/4.2.0-M2/reference/html/#getting-started.changing-other-properties), [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties) 
+| Property | Description |
+| --- | --- |
+| spring.data.rest.base-path | Base path used to expose repository resources |
+| spring.data.rest.default-page-size | Default size of pages |
+| spring.data.rest.max-page-size | Maximum size of pages |
 ```   
 # Spring Data REST Properties
 spring.data.rest.base-path=/magic-api
+spring.data.rest.default-page-size
+spring.data.rest.max-page-size
 ```   
+
+### Pagination
+By default, Spring Data REST will return the first 20 elements Page size = 20. You can navigate to the different pages of data using query param
+```
+http://localhost:8080/employees?page=0
+http://localhost:8080/employees?page=1
+```
+
 
 ## Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
