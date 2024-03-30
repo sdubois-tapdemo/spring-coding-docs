@@ -10,6 +10,21 @@ Spring Data REST is part of the umbrella Spring Data project and makes it easy t
 | PUT |  /entity | Update an Entity |
 | DELETE | /entity/{id} | Delete an Entity |
 
+## Maven Dependancy
+the Dependancy name used on start.spring.io is 'Rest Repositories - Exposing Spring Data repositories over REST via Spring Data REST.'
+```
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
+    </dependency>
+```
+
+## REST Endpoints
+- By default, Spring Data REST will create endpoints based on entity type 
+- Simple pluralized form
+	- First character of Entity type is lowercase 
+	- Then just adds an "s" to the entity
+
 ## Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
 [Spring HATEOAS](https://spring.io/projects/spring-hateoas)
