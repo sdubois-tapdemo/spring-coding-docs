@@ -30,6 +30,17 @@ the Dependancy name used on start.spring.io is 'Rest Repositories - Exposing Spr
 	- First character of Entity type is lowercase 
 	- Then just adds an "s" to the entity
 
+## Annotations
+| Annotation | Description |
+| --- | --- |
+| @RepositoryRestResource(path="members") | Choose a different entity name for the REST endpoint |
+
+Example: 
+```
+@RepositoryRestResource(path="members")
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+``` 
+
 ## Application Properties
 [Spring Data REST Applicaiton Properties](https://docs.spring.io/spring-data/rest/docs/4.2.0-M2/reference/html/#getting-started.changing-other-properties) 
 ```   
