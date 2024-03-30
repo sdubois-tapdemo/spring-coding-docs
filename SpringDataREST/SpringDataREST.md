@@ -8,8 +8,7 @@ Spring Data REST is part of the umbrella Spring Data project and makes it easy t
 | GET |  /entity | Get a list of Entites |
 | GET |  /entity/{id} | Get a single Entity |
 | PUT |  /entity | Update an Entity |
-| DELETE |  /entity/{id} | Delete an Entity |
-
+| DELETE | /entity/{id} | Delete an Entity |
 
 ## Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
