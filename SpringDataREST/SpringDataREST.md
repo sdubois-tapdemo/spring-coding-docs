@@ -3,7 +3,7 @@ Spring Data REST is part of the umbrella Spring Data project and makes it easy t
 [Spring Data REST](https://spring.io/projects/spring-data-rest), [Introduction to Spring Data REST](https://www.baeldung.com/spring-data-rest-intro)
 
 | HTTP Methode | Mapping | Description | 
-] --- | --- | --- |
+| --- | --- | --- |
 | POST | /entity | Create a new Entity |
 | GET |  /entity | Get a list of Entites |
 | GET |  /entity/{id} | Get a single Entity |
