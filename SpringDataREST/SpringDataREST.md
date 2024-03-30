@@ -51,8 +51,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 ```   
 # Spring Data REST Properties
 spring.data.rest.base-path=/magic-api
-spring.data.rest.default-page-size
-spring.data.rest.max-page-size
 ```   
 
 ### Pagination
@@ -62,6 +60,12 @@ http://localhost:8080/employees?page=0
 http://localhost:8080/employees?page=1
 ```
 
+### Sorting
+```
+http://localhost:8080/employees?sort=lastName 			// Sort by last name (ascending is default)
+http://localhost:8080/employees?sort=firstNAme,desc		// Sort by first name, descending
+http://localhost:8080/employees?sort=lastName,firstName,asc	// Sort by last name, then first name, ascending
+```
 
 ## Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
