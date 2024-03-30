@@ -33,3 +33,21 @@ Spring HATEOAS provides some APIs to ease creating REST representations that fol
 - Hypermedia-driven sites provide information to access REST interfaces 
 	- Think of it as meta-data for REST data
 
+## Example response for Get single employee: GET /employees/3
+```
+{
+  "firstName": "Avani",
+  Employee data
+  "lastName": "Gupta",
+  "email": "avani@luv2code.com",
+  "_links": {
+    "self": {
+    "href": "http://localhost:8080/employees/3"
+    },
+    Response meta-data "employee": {
+      Links to data
+    } "href": "http://localhost:8080/employees/3"
+  }
+}
+```
+
