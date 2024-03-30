@@ -7,12 +7,14 @@ Spring Data JPA aims to significantly improve the implementation of data access 
 
 [Spring Data JPA](https://spring.io/projects/spring-data-jpa), [JavaDoc Interface JpaRepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html), [JPA Query Methods](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.at-query)
 
-
 Advanced features available for
 - Extending and adding custom queries with JPQL 
 - Query Domain Specific Language (Query DSL) 
 - Defining custom methods (low-level coding)
 [JPA Query Methods](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.at-query)
+
+## Java Optionals
+[Optionals: Patterns and Good Practices](https://forums.oracle.com/ords/apexds/post/optionals-patterns-and-good-practices-2540)
 
 ## Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
