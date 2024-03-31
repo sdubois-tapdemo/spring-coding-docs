@@ -67,7 +67,7 @@ http://localhost:8080/employees?sort=firstNAme,desc		// Sort by first name, desc
 http://localhost:8080/employees?sort=lastName,firstName,asc	// Sort by last name, then first name, ascending
 ```
 
-## Spring HATEOAS
+# Spring HATEOAS
 Spring HATEOAS provides some APIs to ease creating REST representations that follow the HATEOAS principle when working with Spring and especially Spring MVC. The core problem it tries to address is link creation and representation assembly.
 [Spring HATEOAS](https://spring.io/projects/spring-hateoas), [Hypertext Application Language (HAL)](https://en.wikipedia.org/wiki/Hypertext_Application_Language)
 - Spring Data REST endpoints are HATEOAS compliant HATEOAS: 

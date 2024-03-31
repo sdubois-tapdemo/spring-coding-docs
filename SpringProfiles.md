@@ -7,7 +7,7 @@ Spring Profiles provide a way to segregate parts of your application configurati
 export SPRING_PROFILES_ACTIVE=local
 ```
 
-# Set Profile with Environment Variable
+# Set Profile with MVN Command line argument
 ```
 mwn spring-boot:run -Dspring-boot.run.profiles=local
 ```
