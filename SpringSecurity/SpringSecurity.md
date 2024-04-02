@@ -15,6 +15,8 @@ Spring Security is a framework that focuses on providing both authentication and
 - Protect URLs based on role
 - Store users, passwords and roles in DB (plain-text -> encrypted)
 [Spring Security](https://docs.spring.io/spring-security/reference/)
+[Spring Security API Documentation](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/)
+[Spring Security Source](https://github.com/spring-projects/spring-security/tree/main/config/src/main/java/org/springframework/security)
 
 ## Spring Security dependancy in pom.xml
 ```
