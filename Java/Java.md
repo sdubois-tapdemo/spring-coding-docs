@@ -24,6 +24,9 @@ Non-primitive data types are called reference types because they refer to object
 
 Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. 
 
+# Comparator and Comparable
+[Comparator and Comparable](https://www.baeldung.com/java-comparator-comparable)
+
 # Java Conditions
 ## Java Conditions
 - [Java Conditions and If Statements](https://www.w3schools.com/java/java_conditions.asp)
@@ -582,6 +585,42 @@ for (Student obj : theStudent) {
 String query_str = "FROM Student WHERE lastName='<string>'";
 query_str.replace("<string>", name);
 ```
+
+# Method References
+[Method References](https://www.baeldung.com/java-method-references)
+```
+List<String> messages = Arrays.asList("hello", "baeldung", "readers!");
+// Capitalice Words with Lambda Expressions
+messages.forEach(word -> StringUtils.capitalize(word));
+
+// Capitalice Words with Methode Reference
+messages.forEach(StringUtils::capitalize);
+```
+
+# Streams
+[Streams Examples)(https://howtodoinjava.com/java8/intstream-examples/)
+
+# Design Pattern
+## Optionals
+[Optionals: Pattern](https://forums.oracle.com/ords/apexds/post/optionals-patterns-and-good-practices-2540)
+
+## Optionals: First Patterns
+```
+Optional<Person> opt = ...;
+
+if (opt.isPresent()) {
+
+    int value = opt.get(); // there is a value
+
+} else {
+
+    // decide what to do
+
+}
+```
+
+## Builders
+[Builder Design Pattern](https://www.digitalocean.com/community/tutorials/builder-design-pattern-in-java)
 
 
 
