@@ -60,4 +60,20 @@ spring.security.user.password=mypassword
 - Custom / Pluggable
 - OIDC (Okta, KeyCloak)
 
+## Cross-Site Request Forgery (CSRF)
+- Spring Security can protect against CSRF attacks
+- Embed additional authentication data/token into all HTML forms
+- On subsequent requests, web app will verify token before processing
+- Primary use case is traditional web applications (HTML forms etc …)
+### When to use CSRF Protection?
+- The Spring Security team recommends
+	- Use CSRF protection for any normal browser web requests
+	- Traditional web apps with HTML forms to add/modify data
+- If you are building a REST API for non-browser clients
+	- you may want to disable CSRF protection
+- In general, not required for stateless REST APIs
+	- That use POST, PUT, DELETE and/or PATCH
+
+
+
 
