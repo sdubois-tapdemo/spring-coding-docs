@@ -597,34 +597,5 @@ messages.forEach(word -> StringUtils.capitalize(word));
 messages.forEach(StringUtils::capitalize);
 ```
 
-# Streams
-[Streams Examples)(https://howtodoinjava.com/java8/intstream-examples/)
-
-# Design Pattern
-## Optionals
-[Optionals: Pattern](https://forums.oracle.com/ords/apexds/post/optionals-patterns-and-good-practices-2540)
-
-## Optionals: First Patterns
-```
-Optional<Person> opt = ...;
-
-if (opt.isPresent()) {
-
-    int value = opt.get(); // there is a value
-
-} else {
-
-    // decide what to do
-
-}
-```
-
-## Builders
-[Builder Design Pattern](https://www.digitalocean.com/community/tutorials/builder-design-pattern-in-java)
-
-
-
-
-
 
 Reference: https://www.w3schools.com/java/java_operators.asp
