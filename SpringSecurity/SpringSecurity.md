@@ -92,7 +92,7 @@ In Spring Security 5.8, the antMatchers, mvcMatchers, and regexMatchers methods 
 ### How to Get a Bcrypt password
 You have a plaintext password and you want to encrypt using bcrypt
 - Option 1: Use a website utility to perform the encryption
-- Option 2: Write Java code to perform the encryption
+- Option 2: Write Java code to perform the encryption [Generate BCrypt Passwords](https://www.bcryptcalculator.com/)
 
 
 
