@@ -87,7 +87,7 @@ In Spring Security 5.8, the antMatchers, mvcMatchers, and regexMatchers methods 
 
 # Encrypted Passwords
 ## BCrypt to hash passwords
-[Why you should use BCrypt to hash passwords](https://danboterhoven.medium.com/why-you-should-use-bcrypt-to-hash-passwords-af330100b861)[Detailed bcrypt algorithm analysis](https://en.wikipedia.org/wiki/Bcrypt)[Password hashing - Best Practices](https://crackstation.net/hashing-security.htm)
+[Why you should use BCrypt to hash passwords](https://danboterhoven.medium.com/why-you-should-use-bcrypt-to-hash-passwords-af330100b861) - [Detailed bcrypt algorithm analysis](https://en.wikipedia.org/wiki/Bcrypt) - [Password hashing - Best Practices](https://crackstation.net/hashing-security.htm)
 
 ### How to Get a Bcrypt password
 You have a plaintext password and you want to encrypt using bcrypt
