@@ -78,5 +78,22 @@ spring.security.user.password=mypassword
 	- That use POST, PUT, DELETE and/or PATCH
 
 
+## Spring MVC Integration
+[Spring MVC Integration](https://docs.spring.io/spring-security/reference/servlet/integrations/mvc.html)
+
+# Configuration Migration
+In Spring Security 5.8, the antMatchers, mvcMatchers, and regexMatchers methods were deprecated in favor of new requestMatchers methods. The new requestMatchers methods were added to authorizeHttpRequests, authorizeRequests, CSRF configuration, WebSecurityCustomizer and any other places that had the specialized RequestMatcher methods. The deprecated methods are removed in Spring Security 6.
+[Configuration Migration](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html)
+
+# Encrypted Passwords
+## BCrypt to hash passwords
+[Why you should use BCrypt to hash passwords](https://danboterhoven.medium.com/why-you-should-use-bcrypt-to-hash-passwords-af330100b861)[Detailed bcrypt algorithm analysis](https://en.wikipedia.org/wiki/Bcrypt)[Password hashing - Best Practices](https://crackstation.net/hashing-security.htm)
+
+### How to Get a Bcrypt password
+You have a plaintext password and you want to encrypt using bcrypt
+- Option 1: Use a website utility to perform the encryption
+- Option 2: Write Java code to perform the encryption
+
+
 
 
