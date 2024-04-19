@@ -26,7 +26,7 @@ The use of view technologies in Spring MVC is pluggable. Whether you decide to u
 
 | Annotation | Description |
 | --- | --- |
-| @RequestMapping | general Mapping |
+| @RequestMapping | will support any HTTP request (GET, POST etc.) |
 | @GetMapping | Requests data from given resource |
 | @PostMapping | Submits data to given resource |
 
@@ -93,6 +93,31 @@ public String processForm(...) {
 ...
 }
 ...
+
+## Spring MVC Form Validation
+- Java has a standard Bean Validation API
+- Defines a metadata model and API for entity validation
+- Spring Boot and Thymeleaf also support the Bean Validation API
+(Jakarta Bean Validation)[https://beanvalidation.org/] (Jakarta Bean Validation specification
+)[https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html#constraintsdefinitionimplementation]
+
+## Java’s Standard Bean Validation API
+- Java has a standard Bean Validation API
+- Defines a metadata model and API for entity validation
+- Spring Boot and Thymeleaf also support the Bean Validation API
+(Jakarta Bean Validation)[https://beanvalidation.org/] (Jakarta Bean Validation specification
+)[https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html#constraintsdefinitionimplementation]
+
+| Annotation | Description |
+| --- | --- |
+| @NotNull | Checks that the annotated value is not null |
+| @Min | Must be a number >= value |
+| @Max | Must be a number <= value |
+| @Size | Size must much the given size |
+| @Pattern | Must match a regular expresseion pattern |
+| @Future / @Past | Data must be in future or past of given date |
+
+
 
 
 

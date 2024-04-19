@@ -3,6 +3,8 @@ Spring Security is a powerful and highly customizable authentication and access-
 Spring Security is a framework that focuses on providing both authentication and authorization to Java applications. Like all Spring projects, the real power of Spring Security is found in how easily it can be extended to meet custom requirements
 [Spring Security Documentaiton](https://spring.io/projects/spring-security)
 [Spring Security Getting Started](https://docs.spring.io/spring-security/reference/servlet/getting-started.html)
+[Spring Boot REST Security with JPA/Hibernate Tutoria](https://www.luv2code.com/bonus-lecture-spring-boot-rest-security-jpa-hibernate-bcrypt-pdf)
+[Spring Boot REST Security with JPA/Hibernate Tutoria Source Code](Spring Boot REST Security with JPA/Hibernate Tutoriahttps://www.luv2code.com/bonus-lecture-spring-boot-rest-security-jpa-hibernate-bcryptcode)
 
 ## Spring Security Features
 - Comprehensive and extensible support for both Authentication and Authorization
@@ -41,6 +43,12 @@ spring.security.user.name=myuser
 spring.security.user.password=mypassword
 ```
 
+## Application Properties
+```
+logging.level.org.springframework.security=DEBUG
+```
+
+
 ## Spring Security Model
 - Spring Security defines a framework for security
 - Implemented using Servlet filters in the background
@@ -77,7 +85,6 @@ spring.security.user.password=mypassword
 - In general, not required for stateless REST APIs
 	- That use POST, PUT, DELETE and/or PATCH
 
-
 ## Spring MVC Integration
 [Spring MVC Integration](https://docs.spring.io/spring-security/reference/servlet/integrations/mvc.html)
 
@@ -93,6 +100,14 @@ In Spring Security 5.8, the antMatchers, mvcMatchers, and regexMatchers methods 
 You have a plaintext password and you want to encrypt using bcrypt
 - Option 1: Use a website utility to perform the encryption
 - Option 2: Write Java code to perform the encryption [Generate BCrypt Passwords](https://www.bcryptcalculator.com/)
+
+## Custom Authentification and Authorisation Tables
+- Tell Spring how to query your custom tables
+- Provide query to find user by user name
+- Provide query to find authorities / roles by user name
+
+
+
 
 
 
