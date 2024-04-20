@@ -1,6 +1,7 @@
 # GIT
 
 
+[Think Like (a) Git](https://think-like-a-git.net/)
 (Think Like a Git)[https://think-like-a-git.net/]
 
 
