@@ -50,36 +50,53 @@ Tag references are basically like branch references that never move. Once you've
    ```
    git reset --hard 
    ```
-4. Switch to your visualizer and predict how its view will change when you refresh it.
-5. Refresh your visualizer and see whether your prediction was correct.
-5. Are you happy with the result?
-7. If YES: Move your real branch forward to where the test_merge branch is.
-8. If NO: Delete the test_merge branch.
+4. Are you happy with the result?
+   If YES: Move your real branch forward to where the test_merge branch is.
+   ```
+   git checkout master            ## Switch to ^master' and merge 'test_merge' into it
+   git merge test_merge           ## Complete the merge on master if all is fine
+   ```
+
+   If NO: Delete the test_merge branch.
+   ```
+   git checkout master
+   git branch -D test_merge      ## Delete the test_merge
+   ```
+
+### Savepoint Pattern
+1. Make sure you're on the right branch and that you have a clean working state.
+   ```
+   git checkout master            ## Go to the 'master' branch
+   git status                     ## Verify you are on 'master' and have a clean state
+   ```
+2. Create a new branch to use as a savepoint, but don't switch to it.
+   ```
+   git branch savepoint           ## Create 'savepoint' branch
+   git status                     ## We should be still on 'master' branch
+   ```
+3. Do the merge.
+   ```
+   git merge spiffy_new_feature   ## Merge 'spiffy_new_feature' into 'savepoint'
+   ```
+   If you want to abort the merge at this point, type
+   ```
+   git reset --hard
+   ```
+4. Are you happy with the result?
+   If YES: Move your real branch forward to where the test_merge branch is.
+   ```
+   git branch -d savepoint        
+   ```
+
+   If NO: Delete the test_merge branch.
+   ```
+   git reset --hard savepoint     ## Replace 'master' with 'savepoint'
+   git branch -d savepoint        ## If you want to clean up, you can now delete the savepoint
+   ```
 
 
 
 
-
-
-
-
-if you want to test merge the new_feature branch into the master
-```
-git checkout master            ## Go to the 'master' branch
-git status                     ## Verify you are on 'master' and have a clean state 
-git checkout -b test_merge     ## Create 'test_merge' branch
-git merge spiffy_new_feature   ## Merge 'spiffy_new_feature' into 'test_merge'
-git reset --hard               ## Abort the merge if there are conflicts that can not be resolced
-
-## Complete the merge on master if all is fine
-git checkout master
-git merge test_merge
-
-## Drop the test_merge branch
-git checkout master
-git branch -D test_merge
-```
-### Savepoint pattern
 
 ## GitX
 ```
