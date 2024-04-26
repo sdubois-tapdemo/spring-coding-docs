@@ -1,13 +1,14 @@
 # GIT
 
 
-Greate Guide: [Think Like (a) Git](https://think-like-a-git.net/)
+Great Guide: [Think Like (a) Git](https://think-like-a-git.net/)
 
 
 ```
 # Visualize the Git history
 git log --oneline --all
-git log --oneline --all --graph
+git log --oneline --all --graph ## Log as onliner with all branches as graph
+git log --graph --all --oneline --decorate -6
 ```
 
 ## Git Commit
@@ -95,9 +96,8 @@ Tag references are basically like branch references that never move. Once you've
    git branch -d savepoint        ## If you want to clean up, you can now delete the savepoint
    ```
 
-
-
-
+## Git Rebase
+[Git Rebase Example](https://gcapes.github.io/git-course/12-rebasing/index.html)
 
 ## GitX
 ```
