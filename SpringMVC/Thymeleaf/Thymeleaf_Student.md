@@ -11,6 +11,8 @@ src/
 |       └── model/
 |           └── Student.java
 └── resources/
+    |-- statuc.css/
+    |     └── demo.css
     |-- templates/
     |     └── student-confirmation.html
     |     └── student-form.html
@@ -81,7 +83,7 @@ public class Student {
 ```
 
 
-## Test Controller
+## Rest Controller
 ### Student Controller (StudentController.java)
 ```
 package com.luv2code.springboot.thymdleafdemo.controller;
@@ -224,4 +226,13 @@ Favorite Operating Systems: <ul>
 
 </body>
 </html>
+```
+
+## CSS Stylesheats
+### Demo Stylesheet (demo.css)
+```
+.funny {
+    font-style: italic;
+    color: green;
+}
 ```
