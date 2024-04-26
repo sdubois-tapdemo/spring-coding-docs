@@ -2,6 +2,7 @@
 
 ## Remove Objects from a List with (list.removeIf)
 ```
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
