@@ -37,6 +37,10 @@ Create, Read, Update and Delete Objects (CRUD)
 
 # Databases
 
+## JPA Query Methods
+[JPA Query Methods](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
+Details in UDEMY Course: Spring Boot 3: Learn Spring 6, Spring Core, Spring REST, Spring MVC, Spring Security, Thymeleaf, JPA, Hibernate, MySQL - Chapter 227
+
 ## MySQL Database
 ### MySQL Database Server
 - The MySQL Database Server is the main engine of the database
