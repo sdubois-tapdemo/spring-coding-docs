@@ -4,6 +4,8 @@
 
 $\sqrt{3x-1}+(1+x)^2$
 
+$\psi\rangle = \alpha|0\rangle + \beta|1\rangle$
+
 ```
 |\psi\rangle = \alpha|0\rangle + \beta|1\rangle
 $\psi\rangle = \alpha|0\rangle + \beta|1\rangle$
