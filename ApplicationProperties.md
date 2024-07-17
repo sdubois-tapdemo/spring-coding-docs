@@ -91,6 +91,13 @@ management.endpoints.web.base-path=/actuator
 ## Testing Properties
 
 # Using Properties
+```
+socket.team=FC Basel
+countries=Switzerland, Germany, Brazil, Germany, India
+```
+
+
+
 ## Read Application Properties in Java
 ```
 public class myClass {
@@ -122,6 +129,9 @@ public class myClass {
 public class myClass {
     @Value("${socker.team}")        // read socker.team variable from application.properties
     private String sockerTeam;
+
+    @Value("${countries}")          // Read String List 'countries' 
+    private List<String> countries;
 
     public String HelloWorld() {
         System.out.println("Message (sockerTeam) " + sockerTeam);
